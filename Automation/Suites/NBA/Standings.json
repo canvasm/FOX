@@ -1,0 +1,17 @@
+{
+	"id" : "Standings",
+
+	"setup" : function() {
+	
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_Standings_001",
+			"description" : "",
+			"test" : function() {
+			
+			}
+		}
+	]
+}

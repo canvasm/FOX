@@ -1,0 +1,270 @@
+4.6.0
+=====
+FDB-7222 [as3][iOS][silverlight][android] improved AdManager on UE support.
+FDB-5699 [android] added support for AdManager to play companion ads.
+FDB-7119 [silverlight] added support for AdManager to load renderers based on MRM UI configuration.
+FDB-7118 [js] added support for player to set desired bitrate. API changes:
+* added constant: PARAMETER_RENDERER_VIDEO_DESIRED_BITRATE
+FDB-6743 [android] added support for 3rd party developed renderers.
+FDB-7224 [js] added support for TremorAdRenderer to play companion ads.
+FDB-7596 [iOS] improved MRAIDRenderer.
+* added support for creative to expand with arbitrary size.
+* added support for creative to expand with core animation.
+FDB-7468 [iOS] added support for MRAID creative to play video ads.
+CLIENTHELP-3604 [android] improved AdManagerLoader to use Context instead of Activity to get AdManager instance. API changes:
+* added: AdManagerLoaderFactory.getInstance(Context appContext)
+* deprecated: AdManagerLoaderFactory.getInstance(Activity activity)
+CLIENTHELP-3692 [android] improved AdManager to avoid app hang when renderer loading is too slowly.
+CLIENTHELP-3748 [iOS] fixed the issue that app scrolls-to-top functionality was blocked.
+MRM-20260 [android] new AdManager event EVENT_SLOT_STARTED.
+MRM-20387 [iOS] added support for VASTTranslator to parse 3rd party MRAID creative.
+MRM-20750 [iOS] fixed the issue that AdContext release didn't close inAppView.
+
+4.5.7
+=====
+MRM-20599 [iOS] fixed the issue in VastTranslator that double MRM ad impression pingbacks were sent. 
+* this bug was involved since v4.5.0.
+
+4.5.4
+=====
+CLIENTHELP-3365 [iOS] improved InAppView to support ad level parameter.
+FDB-7541 [iOS] fixed the issue in MRAIDRenderer that too frequent MRAID API invoking might not work.
+MRM-20300 [iOS] fixed the issue in MRAIDRenderer that inline ad was not resized when temporal slot base changed
+MRM-20303 [iOS] fixed the issue in MRAIDRenderer that main content was not paused when inline overlay or display ad is clicked through to InAppView.
+
+4.5.3.1
+=====
+CLIENTHELP-3599 [iOS] fixed the issue in VideoRenderer that rendition selection was not correct in fullscreen mode.
+
+4.5.3
+=====
+MRM-20230 [iOS] added support for MRAIDRenderer to stop creative when ad creative duration expires.
+CLIENTHELP-3520 [iOS] fixed the issue in CountdownTimerExtension that orientation was in portrait mode when it was launched in landscape mode.
+CLIENTHELP-3115 [iOS] improved VideoRenderer that click on a paused ad video will resume it.
+* before v4.5.3, click on a pause ad video was treat as an user click behavior, so a default click pingback is sent. since this version, the action is treat as user is willing to resume the paused ad video.
+
+4.5.1
+=====
+FDB-6949 [js] added new module TremorAdRenderer.
+* only support preroll slot and no support on companion ads.
+MRM-20110 [js] improved VastTranslator to be compatible with Android devices.
+
+4.5.0
+=====
+FDB-6027 [iOS] added new module FWMRAIDAdRenderer to support IAB MRAID creative.
+FDB-5700 [js] added new module VastTranslator to support IAB VAST 2.0.
+FDB-7062 [as3] improved AdManager on pause slot support.
+* if needing to support pause slot, player integrating with v4.5.0+ AdManager should also load v4.5.0 PauseAdExtension.
+FDB-6950 [android] added new API for player / extension to get parameter. API changes:
+* added: IAdContext.getParameter
+FDB-6786 [as3] added support for Ad Chooser. API changes:
+* added: IRendererContext.setActiveBundleId
+* added: IRendererContext.getActiveBundleId
+MRM-19873 [js] added support for reseller no ad pingbacks.
+
+4.4.0
+=====
+FDB-6787 [as3] added support for loading extensions defined via parameter "autoloadExtensions"
+* value of parameter "autoloadExtensions" should contains the extension names or urls, separated by comma.
+* if the extension name is passed, AdManager will load the extension via relative path of AdManager
+* example: "Extension_A.swf, Extension_B.swf, http://example.com/path/Extension_C.swf"
+FDB-6327 [iOS][android][js] added support for video asset auto play types, API changes:
+* added [android]: IConstants.VIDEO_ASSET_AUTO_PLAY_TYPE_NONE
+* added [android]: IConstants.VIDEO_ASSET_AUTO_PLAY_TYPE_ATTENDED
+* added [android]: IConstants.VIDEO_ASSET_AUTO_PLAY_TYPE_UNATTENDED
+* added [js]: tv.freewheel.SDK.VIDEO_ASSET_AUTO_PLAY_TYPE_NONE
+* added [js]: tv.freewheel.SDK.VIDEO_ASSET_AUTO_PLAY_TYPE_ATTENDED
+* added [js]: tv.freewheel.SDK.VIDEO_ASSET_AUTO_PLAY_TYPE_UNATTENDED
+* added [iOS]: FW_VIDEO_ASSET_AUTO_PLAY_TYPE_NONE
+* added [iOS]: FW_VIDEO_ASSET_AUTO_PLAY_TYPE_ATTENDED
+* added [iOS]: FW_VIDEO_ASSET_AUTO_PLAY_TYPE_UNATTENDED
+* updated [iOS]: parameter (BOOL)autoPlay in method [FWContext setVideoAsset] is changed to (FWVideoAssetAutoPlayType)autoPlayType 
+FDB-6308 [iOS] added support for Renderer development API.
+* since this version, AdManager.framwork only contains O&O renderers, player needs to include corresponding third party Renderer.framework if it's integrating with third party Ad Servers.
+* since this version, iOS AdManager selects Renderer for ad playing based on MRM profile configuration just as other platforms. The only difference is the Renderer URL should be configured as "class://RendererClassName", eg:"class://FWVideoAdRenderer".
+
+
+4.3.1
+=====
+FDB-6302 [js] added support for 3rd party event tracking macros
+MRM-18884 [android] improved support for Live request mode.
+MRM-18956 [iOS] improved support for Live request mode.
+MRM-18898 [iOS] fixed issue that may cause app crash after multiple clicks in a short time.
+
+4.3.0
+=====
+FDB-5152 [android] added support for Live request mode. API changes:
+* added: IAdManager.newContextWithContext
+* added: IAdContext.resetExclusivity
+* added: IAdContext.startSubsession
+* added: IAdContext.setRequestMode
+* added: IAdContext.setRequestDuration
+* added: IAdContext.setVideoAssetCurrentTimePosition
+* added: IAdContext.setReqeustMode
+* added (overload method): IAdContext.setVideoAsset
+FDB-5425 [iOS] added support for VideoAdRenderer to choose the best one among multiple renditions for playing. API changes:
+* added: [FWRendererController creativeRenditions]
+* added: [FWRendererController setPrimaryCreativeRenditions]
+FDB-5696 [iOS][js] added support for player to query slots by time position class. API changes:
+* added [iOS]: [FWContext getSlotsByTimePositionClass]
+* added [js]: Context.getSlotsByTimePositionClass
+FDB-5741 [js] added Translator framework.
+FDB-5985 [iOS] new Renderer for Rhythm New Media integration. API changes:
+* added: [FWRendererController location]
+FDB-6183 [js] added support for player to specify a javascript function via parameter PARAMETER_RENDERER_DISPLAY_COAD_SCRIPT_NAME which can be used to renderer display html ad.
+FDB-6302 [as3] added support for 3rd party event tracking macros.
+FDB-5466 [iOS][js] improved to be compatible with iOS 5
+MRM-18334 [as3] since this version AdManager does NOT dispatch video resume request event(IEVENT.subType == EVENT_PAUSESTATECHANGE_REQUEST && IEvent.vide oPause == true) for PAUSE_MIDROLL slot playing.
+
+4.2.1
+=====
+CLIENTHELP-2660 [js] support playing midroll slots in content video element, default disabled, to enable this feature player should set PARAMETER_PLAY_MIDROLL_BY_CURRENT_VIDEO_ELEMENT to true. 
+
+4.2.0
+=====
+FDB-4967 [iOS] improved the inAppView behavior.
+* new parameter FW_PARAMETER_IN_APP_VIEW_TOOLBAR_SURFACE_RENDER to pass the toolbar surface code.
+* deprecated following parameters: FW_PARAMETER_IN_APP_VIEW_BACKWARD_BUTTON_SOURCE, FW_PARAMETER_IN_APP_VIEW_FORWARD_BUTTON_SOURCE, FW_PARAMETER_IN_APP_VIEW_CLOSE_BUTTON_SOURCE
+FDB-5721 [android] support all IAB metrics.
+FDB-5934 [as3] changed AdManager behavior of passing down placeholder companion slots. since this version, placeholder companion ads will always be returned by IRendererContext.getCompanionSlots.
+MRM-18181 [js] new API for player to pass the content video element to AdManager: AdManager.setContentVideoElement.
+
+4.1.5
+=====
+FDB-6175 [js] support passing visitor info to Ad Server. API changes:
+* added: AdManager.setVisitor
+
+4.1.4
+=====
+MRM-18155 [iOS] fixed an issue in MedialetsRenderer, the bug cause Medialets ad NOT played since 2nd AdManagerContext. 
+
+4.1.0
+=====
+FDB-4589 [as3] support ad bundle, padding ad and skipping overflow ad in Live mode
+FDB-5524 [android] implemented Translator framework 
+FDB-4766 [iOS] support live event midroll ad insertion, disabled by default. Parameters for configration:
+* FW_PARAMETER_EXTENSION_HLS_STITCH_ENABLE
+* FW_PARAMETER_EXTENSION_HLS_STITCH_AD_START_INDICATOR
+* FW_PARAMETER_EXTENSION_HLS_STITCH_AD_END_INDICATOR
+* FW_PARAMETER_EXTENSION_HLS_STITCH_AD_MIN_AD_DURATION
+* FW_PARAMETER_EXTENSION_HLS_STITCH_AD_CONTINUE_INDICATOR
+
+4.0.3
+=====
+FDB-5465 [iOS] DisplayRenderer support click through triggered by creative content
+FDB-5520 [iOS] make InAppView navigation bar configurable
+FDB-5177 [iOS] improve the temporal ad click behavior, app is able to handle the ad click via setting FW_PARAMETER_CLICK_DETECTION to NO
+
+4.0.1
+=====
+FDB-5272 [as3] deprecated support for custom distributor. API changes:
+* deprecated: IAdManager.setCustomDistributor
+
+4.0.0
+=====
+FDB-5094 [js] new AdManager events for player, new parameters for VideoAdRenderer to better support ad playback:
+* EVENT_CONTENT_VIDEO_PAUSE_REQUEST
+* EVENT_CONTENT_VIDEO_RESUME_REQUEST
+* EVENT_CONTENT_VIDEO_ATTACH
+* EVENT_CONTENT_VIDEO_DETACH
+* EVENT_SLOT_STARTED
+* PARAMETER_RENDERER_VIDEO_START_DETECT_TIMEOUT
+* PARAMETER_VIDEO_PROGRESS_DETECT_TIMEOUT 
+FDB-4661 [js] support arbitrary element to process click, Player could enable it via setting html element id to PARAMETER_EXTENSION_AD_CONTROL_CLICK_ELEMENT
+MRM-16526 [js] DivRenderer support click through for image creatives, please note that this feature requres video control disabled.
+MRM-16628 [iOS] new AdManager events for player:
+* FW_NOTIFICATION_CONTENT_PAUSE_REQUEST
+* FW_NOTIFICATION_CONTENT_RESUME_REQUEST
+FDB-5382 [js][android] better support for Android 3.1, new parameter for js VideoAdRenderer:
+* PARAMETER_RENDERER_VIDEO_ANDROID_DELAY
+
+3.9.0
+=====
+FDB-4754 [as3] support a renderer or translator to set key value pairs in ad pingback urls. API changes:
+* added: IAdInstance.setEventCallbackKeyValue(key, value)
+* deprecated: IRendererController.setEventCallbackKeyValue(key, value)
+FDB-4949 [as3] deprecate support for full package handoff.
+FDB-5094 [js][iOS] improved compatibility with iOS 4.3
+FDB-4913 [js] support detecting whether current runtime supports flash creative.
+FDB-4760 [js] support Chrome Lite in Android 2.2, 2.3 and 3.0
+FDB-4763 [android] support static linked AdManager to player application, this is a workaround for an issue in Android SDK 3.0 which blocks external library load. As long as this newly added AdManager.jar is built into apk along with other files from FW SDK, the static linked AdManager will be automatically used in flawed Android 3.0.
+
+3.8.4
+====
+TICKET-5059 [iOS] fixed the memory leak issue that AdInstance object can not be released when Context is deallocated
+
+3.8.3
+====
+TICKET-5040 [js] fixed video ad reloading current page issue
+
+3.8.0
+=====
+FDB-4096 [as3][iOS][js][android] support player profile parameter
+FDB-4575 [iOS] added API [fwContext setVideoDisplayBase:(UIView*)view] for both MPMoviePlayer and AVFoundation based applications, [fwContext setMoviePlayerController:(MPMoviePlayerController *)ctrl] no longer required and will be removed in future version.
+FDB-4598 [as3] better support for pause ad, added API:
+* IAdManager.getSlotsByTimePositionClass(timePositionClass)
+* IAdManager.getVideoPlayheadTime()
+* IConstants.TIME_POSITION_CLASS_PAUSE_MIDROLL
+FDB-3521 [iOS] support ad fallback
+FDB-4602 [iOS] support AVFoundation based player application
+
+3.7.2
+=====
+FDB-4239 [js] Added API:
+tv.freewheel.SDK.AdManager.setNetwork(networkId) 
+tv.freewheel.SDK.AdManager.setServer(serverUrl) 
+tv.freewheel.SDK.AdManager.setLocation(location) 
+tv.freewheel.SDK.AdManager.newContext() 
+tv.freewheel.SDK.Context.setCapability(capability, status)
+tv.freewheel.SDK.Context.addKeyValue(key, value)
+tv.freewheel.SDK.Context.setParameter(name, value, level)
+tv.freewheel.SDK.Context.getParameter(name, level) 
+tv.freewheel.SDK.Context.setVideoState(videoState) 
+tv.freewheel.SDK.Context.registerVideoDisplayBase(id) 
+tv.freewheel.SDK.Context.setVideoDisplayCompatibleSizes(compatibleDimensions) 
+tv.freewheel.SDK.Context.setProfile(playerProfile) 
+tv.freewheel.SDK.Context.setVideoAsset(id, duration, networkId, location, autoPlayType, videoViewRandom, idType, fallbackId) 
+tv.freewheel.SDK.Context.setSiteSection(id, networkId, pageViewRandom, idType, fallbackId) 
+tv.freewheel.SDK.Context.addTemporalSlot(customId, adUnit, timePosition, slotProfile) 
+tv.freewheel.SDK.Context.getTemporalSlots() 
+tv.freewheel.SDK.Context.submitRequest(timeoutSeconds) 
+tv.freewheel.SDK.Context.addEventListener(event, listener) 
+tv.freewheel.SDK.Context.removeEventListener(event, listener) 
+tv.freewheel.SDK.Context.dispose() 
+tv.freewheel.SDK.Slot.getCustomId() 
+tv.freewheel.SDK.Slot.getTimePosition() 
+tv.freewheel.SDK.Slot.getTimePositionClass() 
+tv.freewheel.SDK.Slot.getWidth() 
+tv.freewheel.SDK.Slot.getHeight() 
+tv.freewheel.SDK.Slot.getBase() 
+tv.freewheel.SDK.Slot.play() 
+FDB-4239 [js] Following API will be deprecated:
+tv.freewheel.SDK.AdManager.setServerURL(url) 
+tv.freewheel.SDK.AdManager.submitRequest(callbackFunc, millisecond) 
+tv.freewheel.SDK.AdManager.setVideoAsset(customId, duration) 
+tv.freewheel.SDK.AdManager.setSiteSection(customId) 
+tv.freewheel.SDK.AdManager.playSlots(timePosition, callbackFunc) 
+tv.freewheel.SDK.AdManager.registerVideoDisplayBase(id) 
+tv.freewheel.SDK.AdManager.setVideoDisplayCompatibleSizes(compatibleDimensions) 
+tv.freewheel.SDK.AdManager.setParameter(name, value, level) 
+FDB-4481 [js] In order to play video without too much user interaction in Mobile Safari, player is expected to play prerolls in a touch event handler.
+
+3.7.0
+=====
+
+FDB-4327 [iOS] added parameter :(NSArray *)compatibleDimensions to addVideoPlayerNonTemporalSlot and addSiteSectionNonTemporalSlot 
+FDB-4442 [Android] changed all renderers to be dynamic loaded modules
+FDB-4443 [Android] added AdMob renderer
+FDB-4537 [iOS] added FW_PARAMETER_IN_APP_VIEW_WEB_VIEW_BACKGROUND_COLOR and FW_PARAMETER_IN_APP_VIEW_WEB_VIEW_ALPHA to customize in-app view
+
+3.6.0
+=====
+
+FDB-4446 [as2][as3] added new parameter unattendedPlay:Bool to IAdManager.setVideoAsset()
+FDB-4367 [as2][as3] added new event EVENT_SLOT_PRELOADED when slot preload is finished
+FDB-4311 [iOS] added FWClearCookie() FWSetCookieOptOutState() FWGetCookieOptOutState() to clear or change MRM cookie behavior
+FDB-4036 [iOS] changed -[FWAdManager setServerURL:] to accept host name in addition to full URL as parameter.
+FDB-3866 [iOS] in-app view: added new configurable parameters: FW_PARAMETER_IN_APP_VIEW_BACKWARD_BUTTON_SOURCE FW_PARAMETER_IN_APP_VIEW_FORWARD_BUTTON_SOURCE FW_PARAMETER_IN_APP_VIEW_CLOSE_BUTTON_SOURCE FW_PARAMETER_IN_APP_VIEW_NAVIGATION_BAR_BACKGROUND_COLOR FW_PARAMETER_IN_APP_VIEW_NAVIGATION_BAR_ALPHA
+FDB-3889 [iOS] added FWSetUncaughtExceptionHandler() to register global error handler
+FDB-4240 [android] re-released API to support future capablities, see API doc for detail
+Other [iOS] build requires latest iOS SDK 4.2 

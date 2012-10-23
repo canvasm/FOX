@@ -1,0 +1,649 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		368B846E14F2CC6A00720D40 /* AllOrgs_alt.json in Resources */ = {isa = PBXBuildFile; fileRef = 368B846D14F2CC6900720D40 /* AllOrgs_alt.json */; };
+		368B849514F306C300720D40 /* schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 368B849414F306C300720D40 /* schedule.json */; };
+		368B84BF14F313E600720D40 /* FSPScheduleProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84BE14F313E600720D40 /* FSPScheduleProcessingOperation.m */; };
+		368B84C514F359ED00720D40 /* FSPPollingAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84C214F359EC00720D40 /* FSPPollingAction.m */; };
+		368B84C614F359ED00720D40 /* FSPPollingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84C414F359ED00720D40 /* FSPPollingCenter.m */; };
+		368B84E114F374EA00720D40 /* ListAllOrgsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84E014F374EA00720D40 /* ListAllOrgsViewController.m */; };
+		368B84E414F375EF00720D40 /* ShowScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84E314F375EF00720D40 /* ShowScheduleViewController.m */; };
+		368B84EA14F37E2900720D40 /* FSPEventValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84E914F37E2900720D40 /* FSPEventValidator.m */; };
+		368B84ED14F382AA00720D40 /* FSPOrganizationSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B84EC14F382AA00720D40 /* FSPOrganizationSchedule.m */; };
+		36AA987714FEAE690052151E /* standings.json in Resources */ = {isa = PBXBuildFile; fileRef = 36AA987614FEAE690052151E /* standings.json */; };
+		36AA991314FFCE900052151E /* FSPNBAStandingsProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA991214FFCE900052151E /* FSPNBAStandingsProcessingOperation.m */; };
+		36AA991614FFD14F0052151E /* FSPStandingsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA991514FFD14F0052151E /* FSPStandingsValidator.m */; };
+		36AA991914FFD71F0052151E /* FSPRecordObjectValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA991814FFD71E0052151E /* FSPRecordObjectValidator.m */; };
+		36C5CABB14F194F8004FAAA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C5CABA14F194F8004FAAA4 /* UIKit.framework */; };
+		36C5CABD14F194F8004FAAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C5CABC14F194F8004FAAA4 /* Foundation.framework */; };
+		36C5CABF14F194F8004FAAA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C5CABE14F194F8004FAAA4 /* CoreGraphics.framework */; };
+		36C5CAC114F194F8004FAAA4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C5CAC014F194F8004FAAA4 /* CoreData.framework */; };
+		36C5CAC714F194F8004FAAA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CAC514F194F8004FAAA4 /* InfoPlist.strings */; };
+		36C5CAC914F194F8004FAAA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CAC814F194F8004FAAA4 /* main.m */; };
+		36C5CACD14F194F8004FAAA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CACC14F194F8004FAAA4 /* AppDelegate.m */; };
+		36C5CAEF14F1987D004FAAA4 /* FSPObjectValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CAEC14F1987D004FAAA4 /* FSPObjectValidator.m */; };
+		36C5CAF014F1987D004FAAA4 /* FSPOrganizationValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CAEE14F1987D004FAAA4 /* FSPOrganizationValidator.m */; };
+		36C5CAFE14F19960004FAAA4 /* FSPDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CAFC14F19960004FAAA4 /* FSPDataCoordinator.m */; };
+		36C5CB0114F1997E004FAAA4 /* FSPMockDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB0014F1997E004FAAA4 /* FSPMockDataFetcher.m */; };
+		36C5CB0414F19990004FAAA4 /* FSPOrganizationProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB0314F19990004FAAA4 /* FSPOrganizationProcessingOperation.m */; };
+		36C5CB0814F199D6004FAAA4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CB0714F199D6004FAAA4 /* Storyboard.storyboard */; };
+		36C5CB0F14F19C7D004FAAA4 /* FoxSports.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB0D14F19C7D004FAAA4 /* FoxSports.xcdatamodeld */; };
+		36C5CB1214F19C95004FAAA4 /* FSPCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB1114F19C95004FAAA4 /* FSPCoreDataManager.m */; };
+		36C5CB1514F19CA7004FAAA4 /* FSPOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB1414F19CA7004FAAA4 /* FSPOrganization.m */; };
+		36C5CB1B14F1ADC8004FAAA4 /* FSPChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB1A14F1ADC8004FAAA4 /* FSPChannel.m */; };
+		36C5CB2214F1AE00004FAAA4 /* FSPBasketballPlayerStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB1D14F1AE00004FAAA4 /* FSPBasketballPlayerStat.m */; };
+		36C5CB2314F1AE00004FAAA4 /* FSPPlayerStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB1F14F1AE00004FAAA4 /* FSPPlayerStat.m */; };
+		36C5CB2414F1AE00004FAAA4 /* FSPTeamRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB2114F1AE00004FAAA4 /* FSPTeamRecord.m */; };
+		36C5CB2B14F1AE4C004FAAA4 /* FSPBasketballPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB2614F1AE4C004FAAA4 /* FSPBasketballPlayer.m */; };
+		36C5CB2C14F1AE4C004FAAA4 /* FSPPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB2814F1AE4C004FAAA4 /* FSPPlayer.m */; };
+		36C5CB2D14F1AE4C004FAAA4 /* FSPTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB2A14F1AE4C004FAAA4 /* FSPTeam.m */; };
+		36C5CB4114F1AEC8004FAAA4 /* FSPBaseballGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB2F14F1AEC8004FAAA4 /* FSPBaseballGame.m */; };
+		36C5CB4214F1AEC8004FAAA4 /* FSPBasketballGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3114F1AEC8004FAAA4 /* FSPBasketballGame.m */; };
+		36C5CB4314F1AEC8004FAAA4 /* FSPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3314F1AEC8004FAAA4 /* FSPEvent.m */; };
+		36C5CB4414F1AEC8004FAAA4 /* FSPFootballGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3514F1AEC8004FAAA4 /* FSPFootballGame.m */; };
+		36C5CB4514F1AEC8004FAAA4 /* FSPGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3714F1AEC8004FAAA4 /* FSPGame.m */; };
+		36C5CB4614F1AEC8004FAAA4 /* FSPGamePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3914F1AEC8004FAAA4 /* FSPGamePeriod.m */; };
+		36C5CB4714F1AEC8004FAAA4 /* FSPPGAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3B14F1AEC8004FAAA4 /* FSPPGAEvent.m */; };
+		36C5CB4814F1AEC8004FAAA4 /* FSPRacingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3D14F1AEC8004FAAA4 /* FSPRacingEvent.m */; };
+		36C5CB4914F1AEC8004FAAA4 /* FSPTennisEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB3F14F1AEC8004FAAA4 /* FSPTennisEvent.m */; };
+		36C5CB4C14F1AF7F004FAAA4 /* OrganizationsActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB4B14F1AF7F004FAAA4 /* OrganizationsActionsViewController.m */; };
+		36C5CB5014F1B55E004FAAA4 /* NSURL+CommonDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB4F14F1B55E004FAAA4 /* NSURL+CommonDirectories.m */; };
+		36C5CB5214F1C9D0004FAAA4 /* AllOrgs.json in Resources */ = {isa = PBXBuildFile; fileRef = 36C5CB5114F1C9D0004FAAA4 /* AllOrgs.json */; };
+		36C5CB5714F1CBBF004FAAA4 /* NSDate+FSPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB5414F1CBBF004FAAA4 /* NSDate+FSPExtensions.m */; };
+		36C5CB5814F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB5614F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.m */; };
+		36C5CB5B14F1CC06004FAAA4 /* ShowOrganizationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB5A14F1CC06004FAAA4 /* ShowOrganizationsViewController.m */; };
+		36C5CB5E14F1CD0C004FAAA4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5CB5D14F1CD0C004FAAA4 /* RootViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		368B846D14F2CC6900720D40 /* AllOrgs_alt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllOrgs_alt.json; sourceTree = "<group>"; };
+		368B849414F306C300720D40 /* schedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schedule.json; sourceTree = "<group>"; };
+		368B84BD14F313E600720D40 /* FSPScheduleProcessingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPScheduleProcessingOperation.h; path = ../../../FoxSports/FoxSports/FSPScheduleProcessingOperation.h; sourceTree = "<group>"; };
+		368B84BE14F313E600720D40 /* FSPScheduleProcessingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPScheduleProcessingOperation.m; path = ../../../FoxSports/FoxSports/FSPScheduleProcessingOperation.m; sourceTree = "<group>"; };
+		368B84C114F359EB00720D40 /* FSPPollingAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPPollingAction.h; path = ../../../FoxSports/FoxSports/FSPPollingAction.h; sourceTree = "<group>"; };
+		368B84C214F359EC00720D40 /* FSPPollingAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPPollingAction.m; path = ../../../FoxSports/FoxSports/FSPPollingAction.m; sourceTree = "<group>"; };
+		368B84C314F359EC00720D40 /* FSPPollingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPPollingCenter.h; path = ../../../FoxSports/FoxSports/FSPPollingCenter.h; sourceTree = "<group>"; };
+		368B84C414F359ED00720D40 /* FSPPollingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPPollingCenter.m; path = ../../../FoxSports/FoxSports/FSPPollingCenter.m; sourceTree = "<group>"; };
+		368B84DF14F374EA00720D40 /* ListAllOrgsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListAllOrgsViewController.h; sourceTree = "<group>"; };
+		368B84E014F374EA00720D40 /* ListAllOrgsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListAllOrgsViewController.m; sourceTree = "<group>"; };
+		368B84E214F375EF00720D40 /* ShowScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowScheduleViewController.h; sourceTree = "<group>"; };
+		368B84E314F375EF00720D40 /* ShowScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowScheduleViewController.m; sourceTree = "<group>"; };
+		368B84E814F37E2800720D40 /* FSPEventValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPEventValidator.h; path = ../../../FoxSports/FoxSports/FSPEventValidator.h; sourceTree = "<group>"; };
+		368B84E914F37E2900720D40 /* FSPEventValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPEventValidator.m; path = ../../../FoxSports/FoxSports/FSPEventValidator.m; sourceTree = "<group>"; };
+		368B84EB14F382AA00720D40 /* FSPOrganizationSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPOrganizationSchedule.h; path = ../../../FoxSports/FoxSports/FSPOrganizationSchedule.h; sourceTree = "<group>"; };
+		368B84EC14F382AA00720D40 /* FSPOrganizationSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPOrganizationSchedule.m; path = ../../../FoxSports/FoxSports/FSPOrganizationSchedule.m; sourceTree = "<group>"; };
+		36AA987614FEAE690052151E /* standings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = standings.json; sourceTree = "<group>"; };
+		36AA991114FFCE900052151E /* FSPNBAStandingsProcessingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPNBAStandingsProcessingOperation.h; path = ../../../FoxSports/FoxSports/FSPNBAStandingsProcessingOperation.h; sourceTree = "<group>"; };
+		36AA991214FFCE900052151E /* FSPNBAStandingsProcessingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPNBAStandingsProcessingOperation.m; path = ../../../FoxSports/FoxSports/FSPNBAStandingsProcessingOperation.m; sourceTree = "<group>"; };
+		36AA991414FFD14F0052151E /* FSPStandingsValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPStandingsValidator.h; path = ../../../FoxSports/FoxSports/FSPStandingsValidator.h; sourceTree = "<group>"; };
+		36AA991514FFD14F0052151E /* FSPStandingsValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPStandingsValidator.m; path = ../../../FoxSports/FoxSports/FSPStandingsValidator.m; sourceTree = "<group>"; };
+		36AA991714FFD71E0052151E /* FSPRecordObjectValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPRecordObjectValidator.h; path = ../../../FoxSports/FoxSports/FSPRecordObjectValidator.h; sourceTree = "<group>"; };
+		36AA991814FFD71E0052151E /* FSPRecordObjectValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPRecordObjectValidator.m; path = ../../../FoxSports/FoxSports/FSPRecordObjectValidator.m; sourceTree = "<group>"; };
+		36C5CAB614F194F8004FAAA4 /* DataCoordinatorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataCoordinatorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C5CABA14F194F8004FAAA4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36C5CABC14F194F8004FAAA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36C5CABE14F194F8004FAAA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36C5CAC014F194F8004FAAA4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		36C5CAC414F194F8004FAAA4 /* DataCoordinatorTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataCoordinatorTestApp-Info.plist"; sourceTree = "<group>"; };
+		36C5CAC614F194F8004FAAA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36C5CAC814F194F8004FAAA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36C5CACA14F194F8004FAAA4 /* DataCoordinatorTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataCoordinatorTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		36C5CACB14F194F8004FAAA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		36C5CACC14F194F8004FAAA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36C5CAEB14F1987D004FAAA4 /* FSPObjectValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPObjectValidator.h; path = ../../../FoxSports/FoxSports/FSPObjectValidator.h; sourceTree = "<group>"; };
+		36C5CAEC14F1987D004FAAA4 /* FSPObjectValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPObjectValidator.m; path = ../../../FoxSports/FoxSports/FSPObjectValidator.m; sourceTree = "<group>"; };
+		36C5CAED14F1987D004FAAA4 /* FSPOrganizationValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPOrganizationValidator.h; path = ../../../FoxSports/FoxSports/FSPOrganizationValidator.h; sourceTree = "<group>"; };
+		36C5CAEE14F1987D004FAAA4 /* FSPOrganizationValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPOrganizationValidator.m; path = ../../../FoxSports/FoxSports/FSPOrganizationValidator.m; sourceTree = "<group>"; };
+		36C5CAFB14F19960004FAAA4 /* FSPDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPDataCoordinator.h; path = ../../../FoxSports/FoxSports/FSPDataCoordinator.h; sourceTree = "<group>"; };
+		36C5CAFC14F19960004FAAA4 /* FSPDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPDataCoordinator.m; path = ../../../FoxSports/FoxSports/FSPDataCoordinator.m; sourceTree = "<group>"; };
+		36C5CAFD14F19960004FAAA4 /* FSPDataCoordinatorDataRetrievelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPDataCoordinatorDataRetrievelProtocol.h; path = ../../../FoxSports/FoxSports/FSPDataCoordinatorDataRetrievelProtocol.h; sourceTree = "<group>"; };
+		36C5CAFF14F1997E004FAAA4 /* FSPMockDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPMockDataFetcher.h; path = ../../../FoxSports/FoxSports/FSPMockDataFetcher.h; sourceTree = "<group>"; };
+		36C5CB0014F1997E004FAAA4 /* FSPMockDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPMockDataFetcher.m; path = ../../../FoxSports/FoxSports/FSPMockDataFetcher.m; sourceTree = "<group>"; };
+		36C5CB0214F19990004FAAA4 /* FSPOrganizationProcessingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPOrganizationProcessingOperation.h; path = ../../../FoxSports/FoxSports/FSPOrganizationProcessingOperation.h; sourceTree = "<group>"; };
+		36C5CB0314F19990004FAAA4 /* FSPOrganizationProcessingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPOrganizationProcessingOperation.m; path = ../../../FoxSports/FoxSports/FSPOrganizationProcessingOperation.m; sourceTree = "<group>"; };
+		36C5CB0714F199D6004FAAA4 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		36C5CB0E14F19C7D004FAAA4 /* FoxSports.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoxSports.xcdatamodel; sourceTree = "<group>"; };
+		36C5CB1014F19C95004FAAA4 /* FSPCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPCoreDataManager.h; path = ../../../FoxSports/FoxSports/FSPCoreDataManager.h; sourceTree = "<group>"; };
+		36C5CB1114F19C95004FAAA4 /* FSPCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPCoreDataManager.m; path = ../../../FoxSports/FoxSports/FSPCoreDataManager.m; sourceTree = "<group>"; };
+		36C5CB1314F19CA7004FAAA4 /* FSPOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPOrganization.h; path = ../../../FoxSports/FoxSports/FSPOrganization.h; sourceTree = "<group>"; };
+		36C5CB1414F19CA7004FAAA4 /* FSPOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPOrganization.m; path = ../../../FoxSports/FoxSports/FSPOrganization.m; sourceTree = "<group>"; };
+		36C5CB1914F1ADC8004FAAA4 /* FSPChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPChannel.h; path = ../../../FoxSports/FoxSports/FSPChannel.h; sourceTree = "<group>"; };
+		36C5CB1A14F1ADC8004FAAA4 /* FSPChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPChannel.m; path = ../../../FoxSports/FoxSports/FSPChannel.m; sourceTree = "<group>"; };
+		36C5CB1C14F1AE00004FAAA4 /* FSPBasketballPlayerStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPBasketballPlayerStat.h; path = ../../../FoxSports/FoxSports/FSPBasketballPlayerStat.h; sourceTree = "<group>"; };
+		36C5CB1D14F1AE00004FAAA4 /* FSPBasketballPlayerStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPBasketballPlayerStat.m; path = ../../../FoxSports/FoxSports/FSPBasketballPlayerStat.m; sourceTree = "<group>"; };
+		36C5CB1E14F1AE00004FAAA4 /* FSPPlayerStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPPlayerStat.h; path = ../../../FoxSports/FoxSports/FSPPlayerStat.h; sourceTree = "<group>"; };
+		36C5CB1F14F1AE00004FAAA4 /* FSPPlayerStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPPlayerStat.m; path = ../../../FoxSports/FoxSports/FSPPlayerStat.m; sourceTree = "<group>"; };
+		36C5CB2014F1AE00004FAAA4 /* FSPTeamRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPTeamRecord.h; path = ../../../FoxSports/FoxSports/FSPTeamRecord.h; sourceTree = "<group>"; };
+		36C5CB2114F1AE00004FAAA4 /* FSPTeamRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPTeamRecord.m; path = ../../../FoxSports/FoxSports/FSPTeamRecord.m; sourceTree = "<group>"; };
+		36C5CB2514F1AE4C004FAAA4 /* FSPBasketballPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPBasketballPlayer.h; path = ../../../FoxSports/FoxSports/FSPBasketballPlayer.h; sourceTree = "<group>"; };
+		36C5CB2614F1AE4C004FAAA4 /* FSPBasketballPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPBasketballPlayer.m; path = ../../../FoxSports/FoxSports/FSPBasketballPlayer.m; sourceTree = "<group>"; };
+		36C5CB2714F1AE4C004FAAA4 /* FSPPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPPlayer.h; path = ../../../FoxSports/FoxSports/FSPPlayer.h; sourceTree = "<group>"; };
+		36C5CB2814F1AE4C004FAAA4 /* FSPPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPPlayer.m; path = ../../../FoxSports/FoxSports/FSPPlayer.m; sourceTree = "<group>"; };
+		36C5CB2914F1AE4C004FAAA4 /* FSPTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPTeam.h; path = ../../../FoxSports/FoxSports/FSPTeam.h; sourceTree = "<group>"; };
+		36C5CB2A14F1AE4C004FAAA4 /* FSPTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPTeam.m; path = ../../../FoxSports/FoxSports/FSPTeam.m; sourceTree = "<group>"; };
+		36C5CB2E14F1AEC8004FAAA4 /* FSPBaseballGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPBaseballGame.h; path = ../../../FoxSports/FoxSports/FSPBaseballGame.h; sourceTree = "<group>"; };
+		36C5CB2F14F1AEC8004FAAA4 /* FSPBaseballGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPBaseballGame.m; path = ../../../FoxSports/FoxSports/FSPBaseballGame.m; sourceTree = "<group>"; };
+		36C5CB3014F1AEC8004FAAA4 /* FSPBasketballGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPBasketballGame.h; path = ../../../FoxSports/FoxSports/FSPBasketballGame.h; sourceTree = "<group>"; };
+		36C5CB3114F1AEC8004FAAA4 /* FSPBasketballGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPBasketballGame.m; path = ../../../FoxSports/FoxSports/FSPBasketballGame.m; sourceTree = "<group>"; };
+		36C5CB3214F1AEC8004FAAA4 /* FSPEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPEvent.h; path = ../../../FoxSports/FoxSports/FSPEvent.h; sourceTree = "<group>"; };
+		36C5CB3314F1AEC8004FAAA4 /* FSPEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPEvent.m; path = ../../../FoxSports/FoxSports/FSPEvent.m; sourceTree = "<group>"; };
+		36C5CB3414F1AEC8004FAAA4 /* FSPFootballGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPFootballGame.h; path = ../../../FoxSports/FoxSports/FSPFootballGame.h; sourceTree = "<group>"; };
+		36C5CB3514F1AEC8004FAAA4 /* FSPFootballGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPFootballGame.m; path = ../../../FoxSports/FoxSports/FSPFootballGame.m; sourceTree = "<group>"; };
+		36C5CB3614F1AEC8004FAAA4 /* FSPGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPGame.h; path = ../../../FoxSports/FoxSports/FSPGame.h; sourceTree = "<group>"; };
+		36C5CB3714F1AEC8004FAAA4 /* FSPGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPGame.m; path = ../../../FoxSports/FoxSports/FSPGame.m; sourceTree = "<group>"; };
+		36C5CB3814F1AEC8004FAAA4 /* FSPGamePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPGamePeriod.h; path = ../../../FoxSports/FoxSports/FSPGamePeriod.h; sourceTree = "<group>"; };
+		36C5CB3914F1AEC8004FAAA4 /* FSPGamePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPGamePeriod.m; path = ../../../FoxSports/FoxSports/FSPGamePeriod.m; sourceTree = "<group>"; };
+		36C5CB3A14F1AEC8004FAAA4 /* FSPPGAEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPPGAEvent.h; path = ../../../FoxSports/FoxSports/FSPPGAEvent.h; sourceTree = "<group>"; };
+		36C5CB3B14F1AEC8004FAAA4 /* FSPPGAEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPPGAEvent.m; path = ../../../FoxSports/FoxSports/FSPPGAEvent.m; sourceTree = "<group>"; };
+		36C5CB3C14F1AEC8004FAAA4 /* FSPRacingEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPRacingEvent.h; path = ../../../FoxSports/FoxSports/FSPRacingEvent.h; sourceTree = "<group>"; };
+		36C5CB3D14F1AEC8004FAAA4 /* FSPRacingEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPRacingEvent.m; path = ../../../FoxSports/FoxSports/FSPRacingEvent.m; sourceTree = "<group>"; };
+		36C5CB3E14F1AEC8004FAAA4 /* FSPTennisEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPTennisEvent.h; path = ../../../FoxSports/FoxSports/FSPTennisEvent.h; sourceTree = "<group>"; };
+		36C5CB3F14F1AEC8004FAAA4 /* FSPTennisEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSPTennisEvent.m; path = ../../../FoxSports/FoxSports/FSPTennisEvent.m; sourceTree = "<group>"; };
+		36C5CB4014F1AEC8004FAAA4 /* FSPTournamentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSPTournamentEvent.h; path = ../../../FoxSports/FoxSports/FSPTournamentEvent.h; sourceTree = "<group>"; };
+		36C5CB4A14F1AF7F004FAAA4 /* OrganizationsActionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationsActionsViewController.h; sourceTree = "<group>"; };
+		36C5CB4B14F1AF7F004FAAA4 /* OrganizationsActionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationsActionsViewController.m; sourceTree = "<group>"; };
+		36C5CB4E14F1B55E004FAAA4 /* NSURL+CommonDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+CommonDirectories.h"; path = "../../../FoxSports/FoxSports/NSURL+CommonDirectories.h"; sourceTree = "<group>"; };
+		36C5CB4F14F1B55E004FAAA4 /* NSURL+CommonDirectories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+CommonDirectories.m"; path = "../../../FoxSports/FoxSports/NSURL+CommonDirectories.m"; sourceTree = "<group>"; };
+		36C5CB5114F1C9D0004FAAA4 /* AllOrgs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllOrgs.json; sourceTree = "<group>"; };
+		36C5CB5314F1CBBF004FAAA4 /* NSDate+FSPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+FSPExtensions.h"; path = "../../../FoxSports/FoxSports/NSDate+FSPExtensions.h"; sourceTree = "<group>"; };
+		36C5CB5414F1CBBF004FAAA4 /* NSDate+FSPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+FSPExtensions.m"; path = "../../../FoxSports/FoxSports/NSDate+FSPExtensions.m"; sourceTree = "<group>"; };
+		36C5CB5514F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+FSPExtensions.h"; path = "../../../FoxSports/FoxSports/NSDictionary+FSPExtensions.h"; sourceTree = "<group>"; };
+		36C5CB5614F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+FSPExtensions.m"; path = "../../../FoxSports/FoxSports/NSDictionary+FSPExtensions.m"; sourceTree = "<group>"; };
+		36C5CB5914F1CC06004FAAA4 /* ShowOrganizationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOrganizationsViewController.h; sourceTree = "<group>"; };
+		36C5CB5A14F1CC06004FAAA4 /* ShowOrganizationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOrganizationsViewController.m; sourceTree = "<group>"; };
+		36C5CB5C14F1CD0C004FAAA4 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		36C5CB5D14F1CD0C004FAAA4 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C5CAB314F194F8004FAAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36C5CABB14F194F8004FAAA4 /* UIKit.framework in Frameworks */,
+				36C5CABD14F194F8004FAAA4 /* Foundation.framework in Frameworks */,
+				36C5CABF14F194F8004FAAA4 /* CoreGraphics.framework in Frameworks */,
+				36C5CAC114F194F8004FAAA4 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		368B849614F3099A00720D40 /* Data Coordination Private */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Coordination Private";
+			sourceTree = "<group>";
+		};
+		36C5CAAB14F194F8004FAAA4 = {
+			isa = PBXGroup;
+			children = (
+				36C5CAC214F194F8004FAAA4 /* DataCoordinatorTestApp */,
+				36C5CAB914F194F8004FAAA4 /* Frameworks */,
+				36C5CAB714F194F8004FAAA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36C5CAB714F194F8004FAAA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CAB614F194F8004FAAA4 /* DataCoordinatorTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36C5CAB914F194F8004FAAA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CABA14F194F8004FAAA4 /* UIKit.framework */,
+				36C5CABC14F194F8004FAAA4 /* Foundation.framework */,
+				36C5CABE14F194F8004FAAA4 /* CoreGraphics.framework */,
+				36C5CAC014F194F8004FAAA4 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36C5CAC214F194F8004FAAA4 /* DataCoordinatorTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB0914F19BE0004FAAA4 /* Test App Specific Code */,
+				36C5CB0A14F19C18004FAAA4 /* Files From Main Application */,
+				36C5CAC314F194F8004FAAA4 /* Supporting Files */,
+				36C5CB5114F1C9D0004FAAA4 /* AllOrgs.json */,
+				368B849414F306C300720D40 /* schedule.json */,
+				368B846D14F2CC6900720D40 /* AllOrgs_alt.json */,
+				36AA987614FEAE690052151E /* standings.json */,
+			);
+			path = DataCoordinatorTestApp;
+			sourceTree = "<group>";
+		};
+		36C5CAC314F194F8004FAAA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CAC414F194F8004FAAA4 /* DataCoordinatorTestApp-Info.plist */,
+				36C5CAC514F194F8004FAAA4 /* InfoPlist.strings */,
+				36C5CAC814F194F8004FAAA4 /* main.m */,
+				36C5CACA14F194F8004FAAA4 /* DataCoordinatorTestApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36C5CADA14F1981F004FAAA4 /* Data Coordination */ = {
+			isa = PBXGroup;
+			children = (
+				368B849614F3099A00720D40 /* Data Coordination Private */,
+				36C5CAFB14F19960004FAAA4 /* FSPDataCoordinator.h */,
+				36C5CAFC14F19960004FAAA4 /* FSPDataCoordinator.m */,
+				36C5CAFD14F19960004FAAA4 /* FSPDataCoordinatorDataRetrievelProtocol.h */,
+				36C5CAEA14F1984B004FAAA4 /* Data Retrieval */,
+				36C5CAE914F19842004FAAA4 /* Validators */,
+				36C5CAE814F1983B004FAAA4 /* Data Processing Operations */,
+			);
+			name = "Data Coordination";
+			sourceTree = "<group>";
+		};
+		36C5CAE814F1983B004FAAA4 /* Data Processing Operations */ = {
+			isa = PBXGroup;
+			children = (
+				368B84BD14F313E600720D40 /* FSPScheduleProcessingOperation.h */,
+				368B84BE14F313E600720D40 /* FSPScheduleProcessingOperation.m */,
+				36C5CB0214F19990004FAAA4 /* FSPOrganizationProcessingOperation.h */,
+				36C5CB0314F19990004FAAA4 /* FSPOrganizationProcessingOperation.m */,
+				36AA991114FFCE900052151E /* FSPNBAStandingsProcessingOperation.h */,
+				36AA991214FFCE900052151E /* FSPNBAStandingsProcessingOperation.m */,
+			);
+			name = "Data Processing Operations";
+			sourceTree = "<group>";
+		};
+		36C5CAE914F19842004FAAA4 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CAEB14F1987D004FAAA4 /* FSPObjectValidator.h */,
+				36C5CAEC14F1987D004FAAA4 /* FSPObjectValidator.m */,
+				36C5CAED14F1987D004FAAA4 /* FSPOrganizationValidator.h */,
+				36C5CAEE14F1987D004FAAA4 /* FSPOrganizationValidator.m */,
+				368B84E814F37E2800720D40 /* FSPEventValidator.h */,
+				368B84E914F37E2900720D40 /* FSPEventValidator.m */,
+				36AA991414FFD14F0052151E /* FSPStandingsValidator.h */,
+				36AA991514FFD14F0052151E /* FSPStandingsValidator.m */,
+				36AA991714FFD71E0052151E /* FSPRecordObjectValidator.h */,
+				36AA991814FFD71E0052151E /* FSPRecordObjectValidator.m */,
+			);
+			name = Validators;
+			sourceTree = "<group>";
+		};
+		36C5CAEA14F1984B004FAAA4 /* Data Retrieval */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CAFF14F1997E004FAAA4 /* FSPMockDataFetcher.h */,
+				36C5CB0014F1997E004FAAA4 /* FSPMockDataFetcher.m */,
+			);
+			name = "Data Retrieval";
+			sourceTree = "<group>";
+		};
+		36C5CB0914F19BE0004FAAA4 /* Test App Specific Code */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB0B14F19C2A004FAAA4 /* View Controlleres */,
+				36C5CACB14F194F8004FAAA4 /* AppDelegate.h */,
+				36C5CACC14F194F8004FAAA4 /* AppDelegate.m */,
+				36C5CB0714F199D6004FAAA4 /* Storyboard.storyboard */,
+			);
+			name = "Test App Specific Code";
+			sourceTree = "<group>";
+		};
+		36C5CB0A14F19C18004FAAA4 /* Files From Main Application */ = {
+			isa = PBXGroup;
+			children = (
+				368B84C114F359EB00720D40 /* FSPPollingAction.h */,
+				368B84C214F359EC00720D40 /* FSPPollingAction.m */,
+				368B84C314F359EC00720D40 /* FSPPollingCenter.h */,
+				368B84C414F359ED00720D40 /* FSPPollingCenter.m */,
+				36C5CB4D14F1B53E004FAAA4 /* Extensions */,
+				36C5CB0C14F19C56004FAAA4 /* Model */,
+				36C5CADA14F1981F004FAAA4 /* Data Coordination */,
+			);
+			name = "Files From Main Application";
+			sourceTree = "<group>";
+		};
+		36C5CB0B14F19C2A004FAAA4 /* View Controlleres */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB4A14F1AF7F004FAAA4 /* OrganizationsActionsViewController.h */,
+				36C5CB4B14F1AF7F004FAAA4 /* OrganizationsActionsViewController.m */,
+				36C5CB5914F1CC06004FAAA4 /* ShowOrganizationsViewController.h */,
+				36C5CB5A14F1CC06004FAAA4 /* ShowOrganizationsViewController.m */,
+				36C5CB5C14F1CD0C004FAAA4 /* RootViewController.h */,
+				36C5CB5D14F1CD0C004FAAA4 /* RootViewController.m */,
+				368B84DF14F374EA00720D40 /* ListAllOrgsViewController.h */,
+				368B84E014F374EA00720D40 /* ListAllOrgsViewController.m */,
+				368B84E214F375EF00720D40 /* ShowScheduleViewController.h */,
+				368B84E314F375EF00720D40 /* ShowScheduleViewController.m */,
+			);
+			name = "View Controlleres";
+			sourceTree = "<group>";
+		};
+		36C5CB0C14F19C56004FAAA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB1914F1ADC8004FAAA4 /* FSPChannel.h */,
+				36C5CB1A14F1ADC8004FAAA4 /* FSPChannel.m */,
+				36C5CB1714F1ADA0004FAAA4 /* Stats */,
+				36C5CB1614F1AD97004FAAA4 /* Organizations */,
+				36C5CB1814F1ADA6004FAAA4 /* Events */,
+				36C5CB0D14F19C7D004FAAA4 /* FoxSports.xcdatamodeld */,
+				368B84EB14F382AA00720D40 /* FSPOrganizationSchedule.h */,
+				368B84EC14F382AA00720D40 /* FSPOrganizationSchedule.m */,
+				36C5CB1014F19C95004FAAA4 /* FSPCoreDataManager.h */,
+				36C5CB1114F19C95004FAAA4 /* FSPCoreDataManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		36C5CB1614F1AD97004FAAA4 /* Organizations */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB2514F1AE4C004FAAA4 /* FSPBasketballPlayer.h */,
+				36C5CB2614F1AE4C004FAAA4 /* FSPBasketballPlayer.m */,
+				36C5CB2714F1AE4C004FAAA4 /* FSPPlayer.h */,
+				36C5CB2814F1AE4C004FAAA4 /* FSPPlayer.m */,
+				36C5CB2914F1AE4C004FAAA4 /* FSPTeam.h */,
+				36C5CB2A14F1AE4C004FAAA4 /* FSPTeam.m */,
+				36C5CB1314F19CA7004FAAA4 /* FSPOrganization.h */,
+				36C5CB1414F19CA7004FAAA4 /* FSPOrganization.m */,
+			);
+			name = Organizations;
+			sourceTree = "<group>";
+		};
+		36C5CB1714F1ADA0004FAAA4 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB1C14F1AE00004FAAA4 /* FSPBasketballPlayerStat.h */,
+				36C5CB1D14F1AE00004FAAA4 /* FSPBasketballPlayerStat.m */,
+				36C5CB1E14F1AE00004FAAA4 /* FSPPlayerStat.h */,
+				36C5CB1F14F1AE00004FAAA4 /* FSPPlayerStat.m */,
+				36C5CB2014F1AE00004FAAA4 /* FSPTeamRecord.h */,
+				36C5CB2114F1AE00004FAAA4 /* FSPTeamRecord.m */,
+			);
+			name = Stats;
+			sourceTree = "<group>";
+		};
+		36C5CB1814F1ADA6004FAAA4 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB2E14F1AEC8004FAAA4 /* FSPBaseballGame.h */,
+				36C5CB2F14F1AEC8004FAAA4 /* FSPBaseballGame.m */,
+				36C5CB3014F1AEC8004FAAA4 /* FSPBasketballGame.h */,
+				36C5CB3114F1AEC8004FAAA4 /* FSPBasketballGame.m */,
+				36C5CB3214F1AEC8004FAAA4 /* FSPEvent.h */,
+				36C5CB3314F1AEC8004FAAA4 /* FSPEvent.m */,
+				36C5CB3414F1AEC8004FAAA4 /* FSPFootballGame.h */,
+				36C5CB3514F1AEC8004FAAA4 /* FSPFootballGame.m */,
+				36C5CB3614F1AEC8004FAAA4 /* FSPGame.h */,
+				36C5CB3714F1AEC8004FAAA4 /* FSPGame.m */,
+				36C5CB3814F1AEC8004FAAA4 /* FSPGamePeriod.h */,
+				36C5CB3914F1AEC8004FAAA4 /* FSPGamePeriod.m */,
+				36C5CB3A14F1AEC8004FAAA4 /* FSPPGAEvent.h */,
+				36C5CB3B14F1AEC8004FAAA4 /* FSPPGAEvent.m */,
+				36C5CB3C14F1AEC8004FAAA4 /* FSPRacingEvent.h */,
+				36C5CB3D14F1AEC8004FAAA4 /* FSPRacingEvent.m */,
+				36C5CB3E14F1AEC8004FAAA4 /* FSPTennisEvent.h */,
+				36C5CB3F14F1AEC8004FAAA4 /* FSPTennisEvent.m */,
+				36C5CB4014F1AEC8004FAAA4 /* FSPTournamentEvent.h */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		36C5CB4D14F1B53E004FAAA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				36C5CB5314F1CBBF004FAAA4 /* NSDate+FSPExtensions.h */,
+				36C5CB5414F1CBBF004FAAA4 /* NSDate+FSPExtensions.m */,
+				36C5CB5514F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.h */,
+				36C5CB5614F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.m */,
+				36C5CB4E14F1B55E004FAAA4 /* NSURL+CommonDirectories.h */,
+				36C5CB4F14F1B55E004FAAA4 /* NSURL+CommonDirectories.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36C5CAB514F194F8004FAAA4 /* DataCoordinatorTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C5CAD314F194F8004FAAA4 /* Build configuration list for PBXNativeTarget "DataCoordinatorTestApp" */;
+			buildPhases = (
+				36C5CAB214F194F8004FAAA4 /* Sources */,
+				36C5CAB314F194F8004FAAA4 /* Frameworks */,
+				36C5CAB414F194F8004FAAA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataCoordinatorTestApp;
+			productName = DataCoordinatorTestApp;
+			productReference = 36C5CAB614F194F8004FAAA4 /* DataCoordinatorTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36C5CAAD14F194F8004FAAA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Übermind";
+			};
+			buildConfigurationList = 36C5CAB014F194F8004FAAA4 /* Build configuration list for PBXProject "DataCoordinatorTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 36C5CAAB14F194F8004FAAA4;
+			productRefGroup = 36C5CAB714F194F8004FAAA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C5CAB514F194F8004FAAA4 /* DataCoordinatorTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36C5CAB414F194F8004FAAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36C5CAC714F194F8004FAAA4 /* InfoPlist.strings in Resources */,
+				36C5CB0814F199D6004FAAA4 /* Storyboard.storyboard in Resources */,
+				36C5CB5214F1C9D0004FAAA4 /* AllOrgs.json in Resources */,
+				368B846E14F2CC6A00720D40 /* AllOrgs_alt.json in Resources */,
+				368B849514F306C300720D40 /* schedule.json in Resources */,
+				36AA987714FEAE690052151E /* standings.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C5CAB214F194F8004FAAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36C5CAC914F194F8004FAAA4 /* main.m in Sources */,
+				36C5CACD14F194F8004FAAA4 /* AppDelegate.m in Sources */,
+				36C5CAEF14F1987D004FAAA4 /* FSPObjectValidator.m in Sources */,
+				36C5CAF014F1987D004FAAA4 /* FSPOrganizationValidator.m in Sources */,
+				36C5CAFE14F19960004FAAA4 /* FSPDataCoordinator.m in Sources */,
+				36C5CB0114F1997E004FAAA4 /* FSPMockDataFetcher.m in Sources */,
+				36C5CB0414F19990004FAAA4 /* FSPOrganizationProcessingOperation.m in Sources */,
+				36C5CB0F14F19C7D004FAAA4 /* FoxSports.xcdatamodeld in Sources */,
+				36C5CB1214F19C95004FAAA4 /* FSPCoreDataManager.m in Sources */,
+				36C5CB1514F19CA7004FAAA4 /* FSPOrganization.m in Sources */,
+				36C5CB1B14F1ADC8004FAAA4 /* FSPChannel.m in Sources */,
+				36C5CB2214F1AE00004FAAA4 /* FSPBasketballPlayerStat.m in Sources */,
+				36C5CB2314F1AE00004FAAA4 /* FSPPlayerStat.m in Sources */,
+				36C5CB2414F1AE00004FAAA4 /* FSPTeamRecord.m in Sources */,
+				36C5CB2B14F1AE4C004FAAA4 /* FSPBasketballPlayer.m in Sources */,
+				36C5CB2C14F1AE4C004FAAA4 /* FSPPlayer.m in Sources */,
+				36C5CB2D14F1AE4C004FAAA4 /* FSPTeam.m in Sources */,
+				36C5CB4114F1AEC8004FAAA4 /* FSPBaseballGame.m in Sources */,
+				36C5CB4214F1AEC8004FAAA4 /* FSPBasketballGame.m in Sources */,
+				36C5CB4314F1AEC8004FAAA4 /* FSPEvent.m in Sources */,
+				36C5CB4414F1AEC8004FAAA4 /* FSPFootballGame.m in Sources */,
+				36C5CB4514F1AEC8004FAAA4 /* FSPGame.m in Sources */,
+				36C5CB4614F1AEC8004FAAA4 /* FSPGamePeriod.m in Sources */,
+				36C5CB4714F1AEC8004FAAA4 /* FSPPGAEvent.m in Sources */,
+				36C5CB4814F1AEC8004FAAA4 /* FSPRacingEvent.m in Sources */,
+				36C5CB4914F1AEC8004FAAA4 /* FSPTennisEvent.m in Sources */,
+				36C5CB4C14F1AF7F004FAAA4 /* OrganizationsActionsViewController.m in Sources */,
+				36C5CB5014F1B55E004FAAA4 /* NSURL+CommonDirectories.m in Sources */,
+				36C5CB5714F1CBBF004FAAA4 /* NSDate+FSPExtensions.m in Sources */,
+				36C5CB5814F1CBBF004FAAA4 /* NSDictionary+FSPExtensions.m in Sources */,
+				36C5CB5B14F1CC06004FAAA4 /* ShowOrganizationsViewController.m in Sources */,
+				36C5CB5E14F1CD0C004FAAA4 /* RootViewController.m in Sources */,
+				368B84BF14F313E600720D40 /* FSPScheduleProcessingOperation.m in Sources */,
+				368B84C514F359ED00720D40 /* FSPPollingAction.m in Sources */,
+				368B84C614F359ED00720D40 /* FSPPollingCenter.m in Sources */,
+				368B84E114F374EA00720D40 /* ListAllOrgsViewController.m in Sources */,
+				368B84E414F375EF00720D40 /* ShowScheduleViewController.m in Sources */,
+				368B84EA14F37E2900720D40 /* FSPEventValidator.m in Sources */,
+				368B84ED14F382AA00720D40 /* FSPOrganizationSchedule.m in Sources */,
+				36AA991314FFCE900052151E /* FSPNBAStandingsProcessingOperation.m in Sources */,
+				36AA991614FFD14F0052151E /* FSPStandingsValidator.m in Sources */,
+				36AA991914FFD71F0052151E /* FSPRecordObjectValidator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		36C5CAC514F194F8004FAAA4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36C5CAC614F194F8004FAAA4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36C5CAD114F194F8004FAAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		36C5CAD214F194F8004FAAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36C5CAD414F194F8004FAAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DataCoordinatorTestApp/DataCoordinatorTestApp-Prefix.pch";
+				INFOPLIST_FILE = "DataCoordinatorTestApp/DataCoordinatorTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36C5CAD514F194F8004FAAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DataCoordinatorTestApp/DataCoordinatorTestApp-Prefix.pch";
+				INFOPLIST_FILE = "DataCoordinatorTestApp/DataCoordinatorTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C5CAB014F194F8004FAAA4 /* Build configuration list for PBXProject "DataCoordinatorTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C5CAD114F194F8004FAAA4 /* Debug */,
+				36C5CAD214F194F8004FAAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36C5CAD314F194F8004FAAA4 /* Build configuration list for PBXNativeTarget "DataCoordinatorTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C5CAD414F194F8004FAAA4 /* Debug */,
+				36C5CAD514F194F8004FAAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36C5CB0D14F19C7D004FAAA4 /* FoxSports.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36C5CB0E14F19C7D004FAAA4 /* FoxSports.xcdatamodel */,
+			);
+			currentVersion = 36C5CB0E14F19C7D004FAAA4 /* FoxSports.xcdatamodel */;
+			name = FoxSports.xcdatamodeld;
+			path = ../../../FoxSports/FoxSports/FoxSports.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 36C5CAAD14F194F8004FAAA4 /* Project object */;
+}

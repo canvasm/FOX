@@ -1,0 +1,17 @@
+{
+	"id" : "Plays",
+
+	"setup" : function() {
+	
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_Plays_001",
+			"description" : "",
+			"test" : function() {
+			
+			}
+		}
+	]
+}

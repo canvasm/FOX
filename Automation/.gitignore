@@ -1,0 +1,5 @@
+Results/*
+machine_settings.json
+*.trace
+*.swp
+*.swo

@@ -1,0 +1,22 @@
+{
+	"id" : "TeamSchedule",
+
+	"setup" : function () {
+		// Setup stuff here
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_Team_Schedule_001",
+			"description" : "The team schedule is displayed",
+			"timeout" : 0.5,
+			"test" : function() {
+				// Stub
+			}
+		}
+	],
+
+	"teardown" : function () {
+		// Stub teardown stuff
+	}
+}

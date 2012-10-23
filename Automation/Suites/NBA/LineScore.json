@@ -1,0 +1,53 @@
+/*
+Title: test.json
+Author: Jayme Deffenbaugh
+*/
+
+{
+	"id" : "LineScore",
+
+	"setup" : function() {
+		navigateToNBAGameStatsForEvent(0);
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_Line_Score_001",
+			"description" : "The sum of home team's period scores match its total score",
+			"test" : function() {
+				const PERIOD_SCORE_PREDICATE = "name like 'period*HomeTeamScore'";
+				const TOTAL_SCORE_LABEL = "totalHomeTeamScore"; 
+				
+				testLineScore(PERIOD_SCORE_PREDICATE, TOTAL_SCORE_LABEL);
+			}
+		},
+		{
+			"id" : "NBA_Line_Score_002",
+			"description" : "The sum of away team's period scores match its total score",
+			"test" : function() {
+				const PERIOD_SCORE_PREDICATE = "name like 'period*AwayTeamScore'";
+				const TOTAL_SCORE_LABEL = "totalAwayTeamScore"; 
+				
+				testLineScore(PERIOD_SCORE_PREDICATE, TOTAL_SCORE_LABEL);
+			}
+		},
+		{
+			"id" : "NBA_Line_Score_003",
+			"description" : "All of the line score labels are layed out correctly for NBA",
+			"test" : function() {
+				const PERIOD_SCORE_PREDICATE = "name like 'period*Score'";
+				const TOTAL_SCORE_LABEL = "totalAwayTeamScore"; 
+				
+				var requiredPeriodLabels = {
+					"period1Header" : "1",
+					"period2Header" : "2",
+					"period3Header" : "3",
+					"period4Header" : "4",
+				}
+
+				testLineScoreLabels(requiredPeriodLabels);
+			}
+		},
+
+	]
+}

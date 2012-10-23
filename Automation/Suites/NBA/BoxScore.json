@@ -1,0 +1,17 @@
+{
+	"id" : "BoxScore",
+
+	"setup" : function() {
+	
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_BoxScore_001",
+			"description" : "",
+			"test" : function() {
+			
+			}
+		}
+	]
+}

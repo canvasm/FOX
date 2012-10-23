@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="FSPBaseballGame" representedClassName="FSPBaseballGame" parentEntity="FSPGame" syncable="YES">
+        <attribute name="awayErrors" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayLosingPitcherID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awaySavingPitcherID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayWinningPitcherID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="baseRunners" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
+        <attribute name="homeErrors" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeLosingPitcherID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeSavingPitcherID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeWinningPitcherID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="losingPlayer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outs" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="savingPlayer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winningPlayer" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="awayTeamStartingPitcher" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="FSPBaseballPlayer" inverseName="awayBaseballGame" inverseEntity="FSPBaseballPlayer" syncable="YES"/>
+        <relationship name="homeTeamStartingPitcher" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="FSPBaseballPlayer" inverseName="homeBaseballGame" inverseEntity="FSPBaseballPlayer" syncable="YES"/>
+    </entity>
+    <entity name="FSPBaseballPlayer" representedClassName="FSPBaseballPlayer" parentEntity="FSPTeamPlayer" syncable="YES">
+        <attribute name="atBats" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ballsThrown" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="battingAverage" optional="YES" attributeType="Float" defaultValueString="-1" syncable="YES"/>
+        <attribute name="battingOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="earnedRuns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hitsAgainst" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeRuns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inningsPitched" optional="YES" attributeType="Float" defaultValueString="-1" syncable="YES"/>
+        <attribute name="losses" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pitchCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="runs" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="runsAllowed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="runsBattedIn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="saves" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="seasonERA" optional="YES" attributeType="Float" defaultValueString="-1" syncable="YES"/>
+        <attribute name="seasonWHIP" optional="YES" attributeType="Float" defaultValueString="-1" syncable="YES"/>
+        <attribute name="stolenBases" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strikeOuts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strikeOutsThrown" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strikesThrown" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="subBatting" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="subPitching" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="walks" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="walksThrown" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayBaseballGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPBaseballGame" inverseName="awayTeamStartingPitcher" inverseEntity="FSPBaseballGame" syncable="YES"/>
+        <relationship name="awayPlayerPBP" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGamePlayByPlayItem" inverseName="currentPlayerAway" inverseEntity="FSPGamePlayByPlayItem" syncable="YES"/>
+        <relationship name="homeBaseballGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPBaseballGame" inverseName="homeTeamStartingPitcher" inverseEntity="FSPBaseballGame" syncable="YES"/>
+        <relationship name="homePlayerPBP" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGamePlayByPlayItem" inverseName="currentPlayerHome" inverseEntity="FSPGamePlayByPlayItem" syncable="YES"/>
+    </entity>
+    <entity name="FSPBasketballGame" representedClassName="FSPBasketballGame" parentEntity="FSPGame" syncable="YES">
+        <attribute name="highPointsLosing" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highPointsLosingPlayerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highPointsWinning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highPointsWinningPlayerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highRebounds" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highReboundsPlayerName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FSPBasketballPlayer" representedClassName="FSPBasketballPlayer" parentEntity="FSPTeamPlayer" syncable="YES">
+        <attribute name="assists" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="blocks" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveRebounds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="disqualifications" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ejections" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fieldGoalPecrentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fieldGoalsAttempted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fieldGoalsMade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="flagrantFouls" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="freeThrowPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="freeThrowsAttempted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="freeThrowsMade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="games" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gamesStarted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="minutesPlayed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="offensiveRebounds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="personalFouls" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="plusMinus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rebounds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="secondsPlayed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="steals" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="technicalFouls" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="threePointPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="threePointsAttempted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="threePointsMade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="turnovers" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="FSPEvent" representedClassName="FSPEvent" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="channelDisplayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="compType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayInColB" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="eventCompleted" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="eventStarted" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="eventState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventTimeTBA" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="eventYear" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="expiresDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="firstGameTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="gameDictionaryCreated" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="itemType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="liveDataURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="liveEngineIdentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="liveEngineUpdatedVersion" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
+        <attribute name="minPollingInterval" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="normalizedStartDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="playerBaseURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="seasonState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="segmentDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="segmentNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="startDateGroup" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="streamable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="uniqueIdentifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="venue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weekNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="belongedToSchedules" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPOrganizationSchedule" inverseName="events" inverseEntity="FSPOrganizationSchedule" syncable="YES"/>
+        <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="events" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="previewStory" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="FSPStory" inverseName="eventPreview" inverseEntity="FSPStory" syncable="YES"/>
+        <relationship name="recapStory" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="FSPStory" inverseName="eventRecap" inverseEntity="FSPStory" syncable="YES"/>
+        <relationship name="videos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPVideo" inverseName="events" inverseEntity="FSPVideo" syncable="YES"/>
+    </entity>
+    <entity name="FSPFightTitleHolder" representedClassName="FSPFightTitleHolder" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxWeight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minWeigth" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfDefences" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wonDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="FSPFootballGame" representedClassName="FSPFootballGame" parentEntity="FSPGame" syncable="YES">
+        <attribute name="awayFirstDowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayFourthDownEfficiency" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayFumblesLost" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayInterceptionsThrown" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayThirdDownEfficiency" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTimeOfPossession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="awayTotalPassAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTotalPassCompletions" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTotalPassingYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTotalRushes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTotalRushingYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTotalYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayYardsPerPass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="awayYardsPerRush" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fieldPosition" optional="YES" attributeType="Integer 32" maxValueString="100" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeFirstDowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeFourthDownEfficiency" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeFumblesLost" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeInterceptionsThrown" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTeamPossession" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="homeThirdDownEfficiency" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTimeOfPossession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeTotalPassAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTotalPassCompletions" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTotalPassingYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTotalRushes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTotalRushingYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTotalYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeYardsPerPass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeYardsPerRush" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FSPFootballPlayer" representedClassName="FSPFootballPlayer" parentEntity="FSPTeamPlayer" syncable="YES">
+        <attribute name="assistedTackles" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defendedPasses" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveForcedFumbles" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveInterceptions" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveInterceptionTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveInterceptionYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveSacks" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defensiveTackles" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fieldGoalAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fieldGoalLongestLength" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fieldGoalPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fieldGoalsMade" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="foxPointsDefense" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="foxPointsKicking" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foxPointsPassing" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foxPointsReceiving" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foxPointsRushing" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foxPointsTotal" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fumblesLost" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fumblesRecovered" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kickingExtraPointAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kickingExtraPointsMade" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kickReturnAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="kickReturnLongest" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kickReturns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kickReturnTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kickReturnYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="passingAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="passingAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="passingCompletions" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="passingInterceptions" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="passingTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="passingYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntAverageLength" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="puntInside20" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntLongestLength" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntReturnAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="puntReturnLongest" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntReturns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntReturnTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="puntReturnYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="quarterbackRating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="receptionAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="receptionLongestLength" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="receptions" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="receptionTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="receptionYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rushingAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rushingLongestLength" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rushingTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rushingYards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rusingAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalTouchdowns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="FSPGame" representedClassName="FSPGame" parentEntity="FSPEvent" syncable="YES">
+        <attribute name="awayTeamIdentifier" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="awayTeamLiveEngineID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="awayTeamScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTimeoutsRemaining" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTeamIdentifier" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="homeTeamLiveEngineID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="homeTeamScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTimeoutsRemaining" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="winningTeamIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="awayTeam" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="awayGames" inverseEntity="FSPTeam" syncable="YES"/>
+        <relationship name="awayTeamPlayers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPTeamPlayer" inverseName="awayGame" inverseEntity="FSPTeamPlayer" syncable="YES"/>
+        <relationship name="homeTeam" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="homeGames" inverseEntity="FSPTeam" syncable="YES"/>
+        <relationship name="homeTeamPlayers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPTeamPlayer" inverseName="homeGame" inverseEntity="FSPTeamPlayer" syncable="YES"/>
+        <relationship name="odds" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGameOdds" inverseName="game" inverseEntity="FSPGameOdds" syncable="YES"/>
+        <relationship name="periods" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FSPGamePeriod" inverseName="game" inverseEntity="FSPGamePeriod" syncable="YES"/>
+        <relationship name="playByPlayItems" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="FSPGamePlayByPlayItem" inverseName="game" inverseEntity="FSPGamePlayByPlayItem" syncable="YES"/>
+    </entity>
+    <entity name="FSPGameOdds" representedClassName="FSPEventOdds" syncable="YES">
+        <attribute name="awayTeamMoneyLine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="awayTeamPointSpread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="awayTeamPSMoneyLine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeTeamMoneyLine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeTeamPointSpread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeTeamPSMoneyLine" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="odds" inverseEntity="FSPGame" syncable="YES"/>
+    </entity>
+    <entity name="FSPGamePeriod" representedClassName="FSPGamePeriod" syncable="YES">
+        <attribute name="awayTeamScore" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTeamScore" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="period" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="periods" inverseEntity="FSPGame" syncable="YES"/>
+    </entity>
+    <entity name="FSPGamePlayByPlayItem" representedClassName="FSPGamePlayByPlayItem" syncable="YES">
+        <attribute name="abbreviatedSummary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="adjustedPeriodValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayScore" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="baseRunners" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="battingSlot" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="batType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="correction" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="directionHit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distanceHit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="down" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeScore" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inningErrors" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inningHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inningRuns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isPlaceholder" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="outOccured" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="outs" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="penalty" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="period" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pointsScored" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="possessionChange" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="possessionChangePhrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="possessionIdentifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="second" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="sequenceNumber" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="substitution" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="summaryPhrase" attributeType="String" syncable="YES"/>
+        <attribute name="topBottom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yardsFromGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="yardsToGo" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="currentPlayerAway" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPBaseballPlayer" inverseName="awayPlayerPBP" inverseEntity="FSPBaseballPlayer" syncable="YES"/>
+        <relationship name="currentPlayerHome" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPBaseballPlayer" inverseName="homePlayerPBP" inverseEntity="FSPBaseballPlayer" syncable="YES"/>
+        <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="playByPlayItems" inverseEntity="FSPGame" syncable="YES"/>
+        <relationship name="pitches" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="FSPPitchEvent" inverseName="playByPlay" inverseEntity="FSPPitchEvent" syncable="YES"/>
+        <relationship name="team" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="playByPlays" inverseEntity="FSPTeam" syncable="YES"/>
+    </entity>
+    <entity name="FSPGolfer" representedClassName="FSPGolfer" parentEntity="FSPPlayer" syncable="YES">
+        <attribute name="avgDriveDistance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="drivingAccuracy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="greensInRegulation" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isTied" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="place" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="putsPerRound" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sandSaves" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="statusKey" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="thruHole" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="todayScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalStrokes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="golfEvent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPPGAEvent" inverseName="golfers" inverseEntity="FSPPGAEvent" syncable="YES"/>
+        <relationship name="rounds" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPGolfRound" inverseName="golfer" inverseEntity="FSPGolfRound" syncable="YES"/>
+        <relationship name="seasons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPGolfStats" inverseName="golfers" inverseEntity="FSPGolfStats" syncable="YES"/>
+    </entity>
+    <entity name="FSPGolfHole" representedClassName="FSPGolfHole" syncable="YES">
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="par" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strokes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="round" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGolfRound" inverseName="holes" inverseEntity="FSPGolfRound" syncable="YES"/>
+    </entity>
+    <entity name="FSPGolfRound" representedClassName="FSPGolfRound" syncable="YES">
+        <attribute name="round" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strokes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="golfer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGolfer" inverseName="rounds" inverseEntity="FSPGolfer" syncable="YES"/>
+        <relationship name="holes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPGolfHole" inverseName="round" inverseEntity="FSPGolfHole" syncable="YES"/>
+    </entity>
+    <entity name="FSPGolfStats" representedClassName="FSPGolfStats" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="earnings" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="playerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="scoringAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="symbolUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="worldRanking" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="worldRankingPoints" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="golfers" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGolfer" inverseName="seasons" inverseEntity="FSPGolfer" syncable="YES"/>
+    </entity>
+    <entity name="FSPHockeyGame" representedClassName="FSPHockeyGame" parentEntity="FSPGame" syncable="YES">
+        <attribute name="awayBlockedShots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayFaceOffWins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayPenaltyMinutes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayPowerPlayGoals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayPowerPlayOpportunities" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayShotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awaySteals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayTurnovers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeBlockedShots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeFaceOffWins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homePenaltyMinutes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homePowerPlayGoals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homePowerPlayOpportunities" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeShotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeSteals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTurnovers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayPeriodStats" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPHockeyPeriodStats" inverseName="awayGame" inverseEntity="FSPHockeyPeriodStats" syncable="YES"/>
+        <relationship name="homePeriodStats" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPHockeyPeriodStats" inverseName="homeGame" inverseEntity="FSPHockeyPeriodStats" syncable="YES"/>
+    </entity>
+    <entity name="FSPHockeyPeriodStats" representedClassName="FSPHockeyPeriodStats" syncable="YES">
+        <attribute name="period" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPHockeyGame" inverseName="awayPeriodStats" inverseEntity="FSPHockeyGame" syncable="YES"/>
+        <relationship name="homeGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPHockeyGame" inverseName="homePeriodStats" inverseEntity="FSPHockeyGame" syncable="YES"/>
+    </entity>
+    <entity name="FSPHockeyPlayer" representedClassName="FSPHockeyPlayer" parentEntity="FSPTeamPlayer" syncable="YES">
+        <attribute name="assists" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="blockedShots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goalsAllowed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goalsScored" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="penaltyMinutes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="plusMinus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="savePercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="saves" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shifts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="star" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeOnIceMins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeOnIceSecs" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalShotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="FSPNewsCity" representedClassName="FSPNewsCity" syncable="YES">
+        <attribute name="affiliateId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="headline" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPNewsHeadline" inverseName="newsCity" inverseEntity="FSPNewsHeadline" syncable="YES"/>
+    </entity>
+    <entity name="FSPNewsHeadline" representedClassName="FSPNewsHeadline" syncable="YES">
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isTopNews" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="newsId" attributeType="String" defaultValueString="--" indexed="YES" syncable="YES"/>
+        <attribute name="publishedDate" attributeType="Date" defaultDateTimeInterval="0" defaultValueString="--" indexed="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="--" syncable="YES"/>
+        <relationship name="newsCity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPNewsCity" inverseName="headline" inverseEntity="FSPNewsCity" syncable="YES"/>
+        <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="news" inverseEntity="FSPOrganization" syncable="YES"/>
+    </entity>
+    <entity name="FSPOrganization" representedClassName="FSPOrganization" syncable="YES">
+        <attribute name="alertMask" optional="YES" attributeType="Integer 16" defaultValueString="YES" syncable="YES"/>
+        <attribute name="branch" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="customizable" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="favorited" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="hasNews" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasTeams" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="logo1URL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logo2URL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordinal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectable" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="teamsAreUpdated" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="uniqueIdentifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="userDefinedOrder" attributeType="Integer 32" minValueString="0" defaultValueString="999" syncable="YES"/>
+        <attribute name="viewTypeString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allChildren" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="allParents" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="allParents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="allChildren" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPOrganization" inverseName="parents" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="currentHierarchyInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPOrganizationHierarchyInfo" inverseName="currentOrg" inverseEntity="FSPOrganizationHierarchyInfo" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPEvent" inverseName="organizations" inverseEntity="FSPEvent" syncable="YES"/>
+        <relationship name="news" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPNewsHeadline" inverseName="organizations" inverseEntity="FSPNewsHeadline" syncable="YES"/>
+        <relationship name="parentHierarchyInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPOrganizationHierarchyInfo" inverseName="parentOrg" inverseEntity="FSPOrganizationHierarchyInfo" syncable="YES"/>
+        <relationship name="parents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="children" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="schedule" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPOrganizationSchedule" inverseName="organization" inverseEntity="FSPOrganizationSchedule" syncable="YES"/>
+        <relationship name="soccerStandingsRules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerStandingsRule" inverseName="organization" inverseEntity="FSPSoccerStandingsRule" syncable="YES"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPTeam" inverseName="organizations" inverseEntity="FSPTeam" syncable="YES"/>
+        <relationship name="videos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPVideo" inverseName="organizations" inverseEntity="FSPVideo" syncable="YES"/>
+    </entity>
+    <entity name="FSPOrganizationHierarchyInfo" representedClassName="FSPOrganizationHierarchyInfo" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isTeam" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ordinal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="currentOrg" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="currentHierarchyInfo" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="parentOrg" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="parentHierarchyInfo" inverseEntity="FSPOrganization" syncable="YES"/>
+    </entity>
+    <entity name="FSPOrganizationSchedule" representedClassName="FSPOrganizationSchedule" syncable="YES">
+        <attribute name="seasonName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPEvent" inverseName="belongedToSchedules" inverseEntity="FSPEvent" syncable="YES"/>
+        <relationship name="organization" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="schedule" inverseEntity="FSPOrganization" syncable="YES"/>
+    </entity>
+    <entity name="FSPPGAEvent" representedClassName="FSPPGAEvent" parentEntity="FSPEvent" syncable="YES">
+        <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="venueName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winnerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winnerPrizeMoney" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="winnerScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="winnerStrokesUnder" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="golfers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPGolfer" inverseName="golfEvent" inverseEntity="FSPGolfer" syncable="YES"/>
+    </entity>
+    <entity name="FSPPitchEvent" representedClassName="FSPPitchEvent" syncable="YES">
+        <attribute name="horizontalAxis" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pitchType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pitchVelocity" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sequence" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="verticalAxis" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="playByPlay" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGamePlayByPlayItem" inverseName="pitches" inverseEntity="FSPGamePlayByPlayItem" syncable="YES"/>
+    </entity>
+    <entity name="FSPPlayer" representedClassName="FSPPlayer" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="liveEngineID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueIdentifier" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="FSPPlayerInjury" representedClassName="FSPPlayerInjury" syncable="YES">
+        <attribute name="eventIdentifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="injury" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="position" attributeType="String" syncable="YES"/>
+        <attribute name="status" attributeType="String" syncable="YES"/>
+        <attribute name="teamIdentifier" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="FSPPurgeableImage" representedClassName="FSPPurgeableImage" syncable="YES">
+        <attribute name="backingData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="expirationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FSPRacingEvent" representedClassName="FSPRacingEvent" parentEntity="FSPEvent" syncable="YES">
+        <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="raceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalLaps" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="trackPhotoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="venueName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="racers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPRacingPlayer" inverseName="race" inverseEntity="FSPRacingPlayer" syncable="YES"/>
+        <relationship name="trackRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPRacingTrackRecords" inverseName="track" inverseEntity="FSPRacingTrackRecords" syncable="YES"/>
+    </entity>
+    <entity name="FSPRacingPlayer" representedClassName="FSPRacingPlayer" parentEntity="FSPPlayer" syncable="YES">
+        <attribute name="bestLapTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bonus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="intervalBehindLeader" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intervalBehindLeaderType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="laps" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="playerNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="positionInClass" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="positionInRace" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="qualifyingSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="qualifyingTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="raceStartPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vehicleDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winnings" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPRacingEvent" inverseName="racers" inverseEntity="FSPRacingEvent" syncable="YES"/>
+        <relationship name="seasons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPRacingSeasonStats" inverseName="racers" inverseEntity="FSPRacingSeasonStats" syncable="YES"/>
+    </entity>
+    <entity name="FSPRacingSeasonStats" representedClassName="FSPRacingSeasonStats" syncable="YES">
+        <attribute name="behind" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lapsLed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerID" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="poles" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="racerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="starts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="top5" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="top10" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="winnings" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="wins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="racers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPRacingPlayer" inverseName="seasons" inverseEntity="FSPRacingPlayer" syncable="YES"/>
+    </entity>
+    <entity name="FSPRacingTrackRecords" representedClassName="FSPRacingTrackRecords" syncable="YES">
+        <attribute name="recordAchievedDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordHolder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordValue" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="track" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPRacingEvent" inverseName="trackRecords" inverseEntity="FSPRacingEvent" syncable="YES"/>
+    </entity>
+    <entity name="FSPSoccerCard" representedClassName="FSPSoccerCard" syncable="YES">
+        <attribute name="cardType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sequenceNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerGame" inverseName="awayCards" inverseEntity="FSPSoccerGame" syncable="YES"/>
+        <relationship name="homeGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerGame" inverseName="homeCards" inverseEntity="FSPSoccerGame" syncable="YES"/>
+        <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerPlayer" inverseName="cards" inverseEntity="FSPSoccerPlayer" syncable="YES"/>
+        <relationship name="soccerTeam" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="soccerCards" inverseEntity="FSPTeam" syncable="YES"/>
+    </entity>
+    <entity name="FSPSoccerGame" representedClassName="FSPSoccerGame" parentEntity="FSPGame" syncable="YES">
+        <attribute name="aditionalMinutes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayAssists" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayCornerKicks" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayFoulsCommitted" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayGoalsNum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayRedCards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awaySaves" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayShots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayShotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayYellowCards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="coverageLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeAssists" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeCornerKicks" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeFoulsCommitted" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeGoalsNum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeRedCards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeSaves" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeShots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeShotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeYellowCards" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerCard" inverseName="awayGame" inverseEntity="FSPSoccerCard" syncable="YES"/>
+        <relationship name="awayGoals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerGoal" inverseName="awayGame" inverseEntity="FSPSoccerGoal" syncable="YES"/>
+        <relationship name="awaySubs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerSub" inverseName="awayGame" inverseEntity="FSPSoccerSub" syncable="YES"/>
+        <relationship name="homeCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerCard" inverseName="homeGame" inverseEntity="FSPSoccerCard" syncable="YES"/>
+        <relationship name="homeGoals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerGoal" inverseName="homeGame" inverseEntity="FSPSoccerGoal" syncable="YES"/>
+        <relationship name="homeSubs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerSub" inverseName="homeGame" inverseEntity="FSPSoccerSub" syncable="YES"/>
+    </entity>
+    <entity name="FSPSoccerGoal" representedClassName="FSPSoccerGoal" syncable="YES">
+        <attribute name="fieldArea" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goalType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sequenceNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="assistPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerPlayer" inverseName="assists" inverseEntity="FSPSoccerPlayer" syncable="YES"/>
+        <relationship name="awayGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerGame" inverseName="awayGoals" inverseEntity="FSPSoccerGame" syncable="YES"/>
+        <relationship name="goalScorer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerPlayer" inverseName="goals" inverseEntity="FSPSoccerPlayer" syncable="YES"/>
+        <relationship name="homeGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerGame" inverseName="homeGoals" inverseEntity="FSPSoccerGame" syncable="YES"/>
+        <relationship name="soccerTeam" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="soccerGoals" inverseEntity="FSPTeam" syncable="YES"/>
+    </entity>
+    <entity name="FSPSoccerPlayer" representedClassName="FSPSoccerPlayer" parentEntity="FSPTeamPlayer" syncable="YES">
+        <attribute name="foulsCommitted" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="foulsSuffered" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goalsAllowed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minutesPlayed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shotsAgainst" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shotsOnGoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shotsOnGoalAgainst" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="assists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerGoal" inverseName="assistPlayer" inverseEntity="FSPSoccerGoal" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerCard" inverseName="player" inverseEntity="FSPSoccerCard" syncable="YES"/>
+        <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerGoal" inverseName="goalScorer" inverseEntity="FSPSoccerGoal" syncable="YES"/>
+        <relationship name="subbedIn" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerSub" inverseName="inPlayer" inverseEntity="FSPSoccerSub" syncable="YES"/>
+        <relationship name="subbedOut" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerSub" inverseName="outPlayer" inverseEntity="FSPSoccerSub" syncable="YES"/>
+    </entity>
+    <entity name="FSPSoccerStandingsRule" representedClassName="FSPSoccerStandingsRule" syncable="YES">
+        <attribute name="endPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isRelegation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="organization" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="soccerStandingsRules" inverseEntity="FSPOrganization" syncable="YES"/>
+    </entity>
+    <entity name="FSPSoccerSub" representedClassName="FSPSoccerSub" syncable="YES">
+        <attribute name="minute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sequenceNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerGame" inverseName="awaySubs" inverseEntity="FSPSoccerGame" syncable="YES"/>
+        <relationship name="homeGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerGame" inverseName="homeSubs" inverseEntity="FSPSoccerGame" syncable="YES"/>
+        <relationship name="inPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerPlayer" inverseName="subbedIn" inverseEntity="FSPSoccerPlayer" syncable="YES"/>
+        <relationship name="outPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPSoccerPlayer" inverseName="subbedOut" inverseEntity="FSPSoccerPlayer" syncable="YES"/>
+        <relationship name="soccerTeam" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="soccerSubs" inverseEntity="FSPTeam" syncable="YES"/>
+    </entity>
+    <entity name="FSPStory" representedClassName="FSPStory" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventId" attributeType="String" syncable="YES"/>
+        <attribute name="imageCaption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="eventPreview" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPEvent" inverseName="previewStory" inverseEntity="FSPEvent" syncable="YES"/>
+        <relationship name="eventRecap" optional="YES" toMany="YES" maxCount="2" deletionRule="Nullify" destinationEntity="FSPEvent" inverseName="recapStory" inverseEntity="FSPEvent" syncable="YES"/>
+    </entity>
+    <entity name="FSPTeam" representedClassName="FSPTeam" parentEntity="FSPOrganization" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="alternateColorInHex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clinched" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colorInHex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="conferenceGamesBack" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="conferenceName" optional="YES" attributeType="String" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="conferenceRanking" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="divisionGamesBack" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="divisionName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="divisionRanking" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fouls" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gamesPlayed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goalDifferential" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goals" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goalsAgainst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goalsAllowedPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goalsPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isEventOnly" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="opponentYardsPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="opponentYardsPerGameRankingString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="penaltyKillPercentage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pointsAgainst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pointsFor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pointsPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="powerPlayPercentage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primaryRank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="reboundsPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="redCards" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shots" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shotsAgainstPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shotsOnGoal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shotsPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sportType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streak" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streakType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamColorNameTag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="turnoversPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="turnoversPerGameRankingString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wildCardGamesBack" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winPercent" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="winsRankingString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winTotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yardsPerGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yardsPerGameRankingString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yellowCards" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="awayGames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="awayTeam" inverseEntity="FSPGame" syncable="YES"/>
+        <relationship name="homeGames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="homeTeam" inverseEntity="FSPGame" syncable="YES"/>
+        <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="teams" inverseEntity="FSPOrganization" syncable="YES"/>
+        <relationship name="playByPlays" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPGamePlayByPlayItem" inverseName="team" inverseEntity="FSPGamePlayByPlayItem" syncable="YES"/>
+        <relationship name="rankings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTeamRanking" inverseName="team" inverseEntity="FSPTeamRanking" syncable="YES"/>
+        <relationship name="records" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTeamRecord" inverseName="team" inverseEntity="FSPTeamRecord" syncable="YES"/>
+        <relationship name="soccerCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerCard" inverseName="soccerTeam" inverseEntity="FSPSoccerCard" syncable="YES"/>
+        <relationship name="soccerGoals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerGoal" inverseName="soccerTeam" inverseEntity="FSPSoccerGoal" syncable="YES"/>
+        <relationship name="soccerSubs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPSoccerSub" inverseName="soccerTeam" inverseEntity="FSPSoccerSub" syncable="YES"/>
+    </entity>
+    <entity name="FSPTeamPlayer" representedClassName="FSPTeamPlayer" parentEntity="FSPPlayer" syncable="YES">
+        <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starter" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sub" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="awayGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="awayTeamPlayers" inverseEntity="FSPGame" syncable="YES"/>
+        <relationship name="homeGame" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPGame" inverseName="homeTeamPlayers" inverseEntity="FSPGame" syncable="YES"/>
+    </entity>
+    <entity name="FSPTeamRanking" representedClassName="FSPTeamRanking" syncable="YES">
+        <attribute name="dropped" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isRanked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pollName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pollType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previousRank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="team" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="rankings" inverseEntity="FSPTeam" syncable="YES"/>
+    </entity>
+    <entity name="FSPTeamRecord" representedClassName="FSPTeamRecord" syncable="YES">
+        <attribute name="losses" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ties" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="wins" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="team" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTeam" inverseName="records" inverseEntity="FSPTeam" syncable="YES"/>
+    </entity>
+    <entity name="FSPTennisEvent" representedClassName="FSPTennisEvent" parentEntity="FSPEvent" syncable="YES">
+        <attribute name="eventSubtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rounds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTennisTournamentRound" inverseName="event" inverseEntity="FSPTennisTournamentRound" syncable="YES"/>
+    </entity>
+    <entity name="FSPTennisMatch" representedClassName="FSPTennisMatch" syncable="YES">
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="competitor1" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTennisPlayer" inverseName="matches" inverseEntity="FSPTennisPlayer" syncable="YES"/>
+        <relationship name="competitor2" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTennisPlayer" inverseName="matches" inverseEntity="FSPTennisPlayer" syncable="YES"/>
+        <relationship name="round" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTennisTournamentRound" inverseName="matches" inverseEntity="FSPTennisTournamentRound" syncable="YES"/>
+        <relationship name="segments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTennisMatchSegment" inverseName="match" inverseEntity="FSPTennisMatchSegment" syncable="YES"/>
+    </entity>
+    <entity name="FSPTennisMatchSegment" representedClassName="FSPTennisMatchSegment" syncable="YES">
+        <attribute name="score1" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score2" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="segmentNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tie1" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tie2" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="match" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTennisMatch" inverseName="segments" inverseEntity="FSPTennisMatch" syncable="YES"/>
+    </entity>
+    <entity name="FSPTennisPlayer" representedClassName="FSPTennisPlayer" parentEntity="FSPPlayer" syncable="YES">
+        <relationship name="matches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTennisMatch" inverseName="competitor2" inverseEntity="FSPTennisMatch" syncable="YES"/>
+        <relationship name="seasons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTennisSeasonStats" inverseName="player" inverseEntity="FSPTennisSeasonStats" syncable="YES"/>
+    </entity>
+    <entity name="FSPTennisSeasonStats" representedClassName="FSPTennisSeasonStats" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="earnings" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="flagURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTennisPlayer" inverseName="seasons" inverseEntity="FSPTennisPlayer" syncable="YES"/>
+    </entity>
+    <entity name="FSPTennisTournamentRound" representedClassName="FSPTennisTournamentRound" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordinal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPTennisEvent" inverseName="rounds" inverseEntity="FSPTennisEvent" syncable="YES"/>
+        <relationship name="matches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPTennisMatch" inverseName="round" inverseEntity="FSPTennisMatch" syncable="YES"/>
+    </entity>
+    <entity name="FSPUFCEvent" representedClassName="FSPUFCEvent" parentEntity="FSPEvent" syncable="YES">
+        <attribute name="eventSubtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fights" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FSPUFCFight" inverseName="event" inverseEntity="FSPUFCFight" syncable="YES"/>
+    </entity>
+    <entity name="FSPUFCFight" representedClassName="FSPUFCFight" syncable="YES">
+        <attribute name="decision" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fightStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordinal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="round" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weightClass" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPUFCEvent" inverseName="fights" inverseEntity="FSPUFCEvent" syncable="YES"/>
+        <relationship name="fighter1" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="FSPUFCPlayer" inverseName="fightAsFighter1" inverseEntity="FSPUFCPlayer" syncable="YES"/>
+        <relationship name="fighter2" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="FSPUFCPlayer" inverseName="fightAsFighter2" inverseEntity="FSPUFCPlayer" syncable="YES"/>
+    </entity>
+    <entity name="FSPUFCPlayer" representedClassName="FSPUFCPlayer" parentEntity="FSPPlayer" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="draws" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fightsOutOf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeTown" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isBeltHolder" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="losses" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reach" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strikesAbsorbedPerMinute" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="strikesLandedPerMinute" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="strikingAccuracy" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strikingDefense" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="submissionAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="takedownAccuracy" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="takedownAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="takedownDefense" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="fightAsFighter1" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPUFCFight" inverseName="fighter1" inverseEntity="FSPUFCFight" syncable="YES"/>
+        <relationship name="fightAsFighter2" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FSPUFCFight" inverseName="fighter2" inverseEntity="FSPUFCFight" syncable="YES"/>
+    </entity>
+    <entity name="FSPVideo" representedClassName="FSPVideo" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="format" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isDefault" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueIdentifier" attributeType="String" defaultValueString="--" indexed="YES" syncable="YES"/>
+        <attribute name="videoURL" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPEvent" inverseName="videos" inverseEntity="FSPEvent" syncable="YES"/>
+        <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FSPOrganization" inverseName="videos" inverseEntity="FSPOrganization" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FSPBaseballGame" positionX="0" positionY="0" width="128" height="300"/>
+        <element name="FSPBaseballPlayer" positionX="25" positionY="1404" width="128" height="495"/>
+        <element name="FSPBasketballGame" positionX="243" positionY="945" width="128" height="135"/>
+        <element name="FSPBasketballPlayer" positionX="1125" positionY="-18" width="128" height="450"/>
+        <element name="FSPEvent" positionX="-119" positionY="639" width="128" height="555"/>
+        <element name="FSPFightTitleHolder" positionX="900" positionY="-36" width="128" height="180"/>
+        <element name="FSPFootballGame" positionX="198" positionY="1323" width="128" height="495"/>
+        <element name="FSPFootballPlayer" positionX="961" positionY="486" width="182" height="855"/>
+        <element name="FSPGame" positionX="205" positionY="576" width="128" height="285"/>
+        <element name="FSPGameOdds" positionX="729" positionY="72" width="128" height="150"/>
+        <element name="FSPGamePeriod" positionX="700" positionY="-81" width="128" height="105"/>
+        <element name="FSPGamePlayByPlayItem" positionX="-441" positionY="972" width="209" height="600"/>
+        <element name="FSPGolfer" positionX="-126" positionY="-1062" width="128" height="270"/>
+        <element name="FSPGolfHole" positionX="171" positionY="-807" width="128" height="105"/>
+        <element name="FSPGolfRound" positionX="-9" positionY="-771" width="128" height="105"/>
+        <element name="FSPGolfStats" positionX="738" positionY="831" width="128" height="195"/>
+        <element name="FSPHockeyGame" positionX="421" positionY="951" width="128" height="345"/>
+        <element name="FSPHockeyPeriodStats" positionX="421" positionY="810" width="128" height="105"/>
+        <element name="FSPHockeyPlayer" positionX="781" positionY="387" width="128" height="270"/>
+        <element name="FSPNewsCity" positionX="-414" positionY="-711" width="128" height="105"/>
+        <element name="FSPNewsHeadline" positionX="-576" positionY="-711" width="128" height="180"/>
+        <element name="FSPOrganization" positionX="-9" positionY="-582" width="128" height="465"/>
+        <element name="FSPOrganizationHierarchyInfo" positionX="151" positionY="-612" width="200" height="135"/>
+        <element name="FSPOrganizationSchedule" positionX="403" positionY="-168" width="200" height="105"/>
+        <element name="FSPPGAEvent" positionX="-180" positionY="-711" width="128" height="165"/>
+        <element name="FSPPitchEvent" positionX="358" positionY="327" width="128" height="150"/>
+        <element name="FSPPlayer" positionX="-198" positionY="171" width="128" height="120"/>
+        <element name="FSPPlayerInjury" positionX="-990" positionY="-207" width="128" height="165"/>
+        <element name="FSPPurgeableImage" positionX="-990" positionY="-324" width="128" height="90"/>
+        <element name="FSPRacingEvent" positionX="-954" positionY="621" width="128" height="195"/>
+        <element name="FSPRacingPlayer" positionX="-954" positionY="234" width="128" height="330"/>
+        <element name="FSPRacingSeasonStats" positionX="-749" positionY="399" width="128" height="285"/>
+        <element name="FSPRacingTrackRecords" positionX="-774" positionY="252" width="128" height="120"/>
+        <element name="FSPSoccerCard" positionX="-648" positionY="-18" width="128" height="150"/>
+        <element name="FSPSoccerGame" positionX="-425" positionY="-99" width="128" height="435"/>
+        <element name="FSPSoccerGoal" positionX="-648" positionY="-414" width="128" height="180"/>
+        <element name="FSPSoccerPlayer" positionX="-317" positionY="-432" width="128" height="240"/>
+        <element name="FSPSoccerStandingsRule" positionX="-621" positionY="-192" width="128" height="120"/>
+        <element name="FSPSoccerSub" positionX="-486" positionY="-447" width="128" height="150"/>
+        <element name="FSPStory" positionX="-468" positionY="705" width="128" height="195"/>
+        <element name="FSPTeam" positionX="567" positionY="612" width="128" height="885"/>
+        <element name="FSPTeamPlayer" positionX="934" positionY="240" width="128" height="120"/>
+        <element name="FSPTeamRanking" positionX="538" positionY="108" width="128" height="165"/>
+        <element name="FSPTeamRecord" positionX="556" positionY="414" width="128" height="120"/>
+        <element name="FSPTennisEvent" positionX="448" positionY="-510" width="128" height="105"/>
+        <element name="FSPTennisMatch" positionX="601" positionY="-450" width="128" height="120"/>
+        <element name="FSPTennisMatchSegment" positionX="214" positionY="-450" width="128" height="135"/>
+        <element name="FSPTennisPlayer" positionX="763" positionY="-264" width="128" height="75"/>
+        <element name="FSPTennisSeasonStats" positionX="367" positionY="-405" width="128" height="165"/>
+        <element name="FSPTennisTournamentRound" positionX="529" positionY="-297" width="128" height="105"/>
+        <element name="FSPUFCEvent" positionX="-281" positionY="612" width="128" height="105"/>
+        <element name="FSPUFCFight" positionX="-272" positionY="360" width="128" height="180"/>
+        <element name="FSPUFCPlayer" positionX="-594" positionY="459" width="128" height="360"/>
+        <element name="FSPVideo" positionX="288" positionY="6" width="128" height="255"/>
+    </elements>
+</model>

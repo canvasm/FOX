@@ -1,0 +1,95 @@
+ [
+  {
+  "organizationId": 19,
+  "name": "PGA Tour",
+  "logo1Url": "http://upload.wikimedia.org/wikipedia/en/thumb/7/77/PGA_Tour_logo.svg/173px-PGA_Tour_logo.svg.png",
+  "logo2Url": "http://upload.wikimedia.org/wikipedia/en/thumb/7/77/PGA_Tour_logo.svg/173px-PGA_Tour_logo.svg.png",
+  "selectable": true,
+  "viewType": "PGA",
+  "customizable": true,
+  "ordinal": 2,
+  "organizationalType": "LEAGUE",
+  "alertable": true
+  },
+  {
+  "organizationId": 22,
+  "name": "NBA",
+  "logo1Url": "http://i.cdn.turner.com/nba/nba/.element/img/2.0/sect/home/twitter/73x73_nba_logo.jpg",
+  "logo2Url": "http://i.cdn.turner.com/nba/nba/.element/img/2.0/sect/home/twitter/73x73_nba_logo.jpg",
+  "selectable": true,
+  "hasTeams": true,
+  "viewType": "NBA",
+  "customizable": true,
+  "ordinal": 1,
+  "organizationalType": "LEAGUE",
+  "alertable": true
+  },
+  {
+  "organizationId": 75,
+  "name": "Other Golf",
+  "logo1Url": "",
+  "logo2Url": "",
+  "selectable": false,
+  "hasTeams": false,
+  "viewType": "GOLF",
+  "customizable": true,
+  "ordinal": 3,
+  "organizationalType": "LEAGUE",
+  "alterable": false,
+  "children":
+  [
+   {
+   "organizationId": 750,
+   "name": "Nationwide Tour",
+   "logo1Url": "http://upload.wikimedia.org/wikipedia/en/thumb/7/77/PGA_Tour_logo.svg/173px-PGA_Tour_logo.svg.png",
+   "logo2Url": "",
+   "selectable": true,
+   "hasTeams": false,
+   "viewType": "NATIONWIDE_GOLF",
+   "customizable": true,
+   "ordinal": 1,
+   "organizationalType": "LEAGUE",
+   "alterable": true
+   },
+   {
+   "organizationId": 751,
+   "name": "Champions Tour",
+   "logo1Url": "http://upload.wikimedia.org/wikipedia/en/thumb/7/77/PGA_Tour_logo.svg/173px-PGA_Tour_logo.svg.png",
+   "logo2Url": "",
+   "selectable": true,
+   "hasTeams": false,
+   "viewType": "CHAMPIONS_GOLF",
+   "customizable": true,
+   "ordinal": 2,
+   "organizationalType": "LEAGUE",
+   "alterable": true
+   },
+   {
+   "organizationId": 752,
+   "name": "European Tour",
+   "logo1Url": "http://upload.wikimedia.org/wikipedia/en/thumb/7/77/PGA_Tour_logo.svg/173px-PGA_Tour_logo.svg.png",
+   "logo2Url": "",
+   "selectable": true,
+   "hasTeams": false,
+   "viewType": "EUROPEON_GOLF",
+   "customizable": true,
+   "ordinal": 3,
+   "organizationalType": "LEAGUE",
+   "alterable": true
+   },
+   {
+   "organizationId": 753,
+   "name": "LPGA Tour",
+   "logo1Url": "http://upload.wikimedia.org/wikipedia/en/thumb/7/77/PGA_Tour_logo.svg/173px-PGA_Tour_logo.svg.png",
+   "logo2Url": "",
+   "selectable": true,
+   "hasTeams": false,
+   "viewType": "LPGA",
+   "customizable": true,
+   "ordinal": 4,
+   "organizationalType": "LEAGUE",
+   "alterable": true
+   }
+   ]
+  }
+  ]

@@ -1,0 +1,4 @@
+#include "FSP-Release.xcconfig"
+
+COPY_PHASE_STRIP = NO
+GCC_GENERATE_DEBUGGING_SYMBOLS = YES

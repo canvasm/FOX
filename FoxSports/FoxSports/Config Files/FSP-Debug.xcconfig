@@ -1,0 +1,10 @@
+#include "FSP-Base.xcconfig"
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
+COPY_PHASE_STRIP = NO
+DEPLOYMENT_POSTPROCESSING = NO
+GCC_GENERATE_DEBUGGING_SYMBOLS = YES
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG
+OTHER_CFLAGS = $(inherit) -fcatch-undefined-behavior -ftrapv
+OTHER_LDFLAGS = -all_load

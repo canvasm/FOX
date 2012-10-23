@@ -1,0 +1,77 @@
+{
+	"id" : "LeagueSchedule",
+
+	"setup" : function () {
+
+		$.target.pushTimeout(0.5);
+		
+		var NBAOrg = $.mainWindow.tableViews()["organization list"].cells()["NBA"];
+
+		if ( ! NBAOrg.isSelected() ) {
+			if ($.isHandheld) {
+				var menuButton = $.mainWindow.navigationBars()[0].buttons()["E"];
+				if (menuButton.isVisible()) {
+					menuButton.tap();
+				}
+			}
+			NBAOrg.tap();	
+		}
+
+		if ( ! $.mainWindow.tableViews()["nba league schedule"].checkIsValid() ) {
+			var teamScheduleButton = $.mainWindow.elements()["eventsSection"].tableViews()["eventDropDownMenu"].cells()["Schedule"];
+			$.Assert.isValid(teamScheduleButton, "The team schedule button is not valid. Another view must be displayed")
+			teamScheduleButton.tap();
+		}
+
+		$.target.popTimeout();
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_League_Schedule_001",
+			"description" : "The team schedule is displayed",
+			"timeout" : 0.5,
+			"test" : function() {
+				$.Assert.isValid($.mainWindow.tableViews()["nba league schedule"], "The team schdeule was not displayed");
+			}
+		},
+		{
+			"id" : "NBA_League_Schedule_002",
+			"description" : "The schedule contains the correct information",
+			"timeout" : 0.5,
+			"test" : function() {
+				var navBar = $.mainWindow.navigationBars()["NBA Schedule"];	
+				$.Assert.isValid(navBar, "The navigation bar for the schedule does not exist");
+				$.Assert.isValid(navBar.leftButton().withName("Close"), "No close button exists in the navigation bar");
+
+				var schedule = $.mainWindow.tableViews()["nba league schedule"];
+				$.Assert.elementTree( schedule,
+					{	name : "nba league schedule",
+						groups : [
+							{ name : "date, opponent, result, hi points, hi rebounds" },
+							{ name : "date, opponent, time (Pacific Standard Time), tv, calendar" }
+						]
+					}
+				);
+			}
+		},
+		{	
+			"id" : "NBA_League_Schedule_003",
+			"description" : "Past NBA games are formatted correctly",
+			"timeout" : 0.5,
+			"enabled" : false,
+			"test" : function() {
+				var scheduleCells = $.Assert.mainwindow.tableViews()["team schedule"].cells();
+				var pastGame = new FSNBATeamSchedulePastGame(scheduleCells[0].label());
+
+				$.printObject(pastGame);
+			}
+		}
+	],
+
+	"teardown" : function () {
+		if ( $.mainWindow.tableViews()["nba league schedule"].checkIsValid() ) {
+			$.mainWindow.navigationBars()["NBA Schedule"].buttons()["Close"].tap()
+		}
+	}
+}

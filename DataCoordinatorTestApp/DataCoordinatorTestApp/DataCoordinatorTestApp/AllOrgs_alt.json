@@ -1,0 +1,16 @@
+ [
+  {
+  "organizationId" : 0,
+  "name" : "NFL",
+  "children" : [
+                {
+ 				"organizationId" : 101,
+ 				"name" : "AFC"
+                }
+        ]
+  },
+  {
+  "organizationId" : 2,
+  "name" : "NBA"
+  }
+]

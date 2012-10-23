@@ -1,0 +1,17 @@
+{
+	"id" : "Chips",
+
+	"setup" : function () {
+		// Setup goes here
+	},
+
+	"testcases" : [
+		{
+			"id" : "NBA_Chips_001",
+			"description" : "",
+			"test" : function () {
+				// Stub test code
+			}
+		}
+	]
+}

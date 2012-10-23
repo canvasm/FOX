@@ -1,0 +1,122 @@
+{
+	"id" : "bvt",
+
+	"setup" : function() {
+		if ($.isHandheld) {
+			var menuButton = $.application.navigationBar().buttons()["menuToggle"];
+			if (menuButton.isVisible()) {
+				menuButton.tap();
+			}
+		}
+	},
+
+	"testcases" : [
+		{
+			"id" : "BVT_001",
+			"description" : "The Organization List table view exists",
+			"test" : function() {
+
+				var columnA = $.mainWindow.tableViews()["organization list"];
+
+				$.Assert.isValid(columnA, "The Organization List table view does not exist");
+			}
+		},
+		{
+			"id" : "BVT_002",
+			"description" : "The Event List table view exists",
+			"timeout" : 5,
+			"test" : function() {
+				var columnB = $.mainWindow.elements()["eventsSection"].tableViews()["eventsList"];
+
+				$.Assert.isValid(columnB, "The Event List table view does not exist");
+			}
+		},
+		{
+			"id" : "BVT_003",
+			"description" : "An \"All\" channel exists in the Organization List",
+			"enabled" : false,
+			"test" : function() {
+
+				var allCell = $.mainWindow.tableViews()["organization list"].cells()["ALL"];
+
+				$.Assert.isValid(allCell, "The Organization List table view does not contain an \"All\" option");
+			}
+		},
+		{
+			"id" : "BVT_004",
+			"description" : "Tapping channels in the Organization List causes the Event list to be populated",
+			"timeout" : 0.5,
+			"test" : function() {
+
+				var channels = ["MLB", "UFC"];
+
+				for (var i = 0; i < channels.length; i++) {
+
+					var channel = $.mainWindow.tableViews()["organization list"].cells()[channels[i]];
+
+					UIALogger.logDebug("Tapping the " + channel.name() + " channel");
+					channel.tap();
+
+					$.target.delay(0.1)
+
+					var events = $.mainWindow.elements()["eventsSection"].tableViews()["eventsList"].cells();
+
+					UIALogger.logDebug("Checking the length of the event list");
+					$.Assert.isTrue((events.length > 0), "The event list is empty when the " + channel.name() + " channel was tapped");
+
+					if ($.isHandheld) {
+						$.application.navigationBar().buttons()["menuToggle"].tap();
+					}
+				}
+
+			}
+		},
+		{
+			"id" : "BVT_005",
+			"description" : "The Video List appears and is populated",
+			"enabled" : false,
+			"test" : function() {
+				var videoButton = $.mainWindow.tableViews()["organization list"].cells()["watch now"];
+				$.Assert.isValid(videoButton, "The Videos button does not exist in the organization list");
+
+				videoButton.scrollToVisible();
+				videoButton.tap();
+
+				var videoModal = $.mainWindow.tableViews()['videoList'];
+				$.Assert.isValid(videoModal, "The video modal was not displayed");
+
+				var videoList = videoModal.cells();
+				$.Assert.isNotNull(videoList, "The video list did not populate correctly");
+
+				var video = videoList.firstWithName("Media item title.");
+				$.Assert.isValid(video, "The expected video item was not in the feed");
+				video.tap();
+
+				// Wait for loading indicator to become invalid
+				$.application.navigationBar().activityIndicators()["In progress"].waitForInvalid();
+
+				var videoHUD = $.mainWindow.images()["fullscreen-hud.png"];
+				$.Assert.isValid(videoHUD, "The video controls do not exist");
+
+				$.target.delay(5);
+
+				var playButton = videoHUD.buttons()['PlayButton'];
+				$.Assert.isValid(playButton, "The play button does not exist");
+				if (!playButton.isVisible()) {
+					$.tapScreen();
+					$.target.delay(1);
+				}
+				playButton.tap()
+			},
+			"teardown" : function () {
+				if ( $.mainWindow.elements()['videoPlayer'].checkIsValid() ) {
+					$.application.navigationBar().buttons()["Close"].tap();
+				}
+
+				if ( $.mainWindow.tableViews()['videoList'].checkIsValid() ) {
+					$.application.navigationBar().buttons()["Close"].tap();
+				}
+			}
+		}
+	]
+}
